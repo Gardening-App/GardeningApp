@@ -4,14 +4,14 @@ body {
     font-family: Arial;
     border-bottom:4px solid black;
   }
-  ul li {
-    display: inline-block;
-  }
-  
- .navBar ul li:not(:last-child):after {
-      padding-top: 2px;
-    content: "|";
-    }
+ul li {
+	display: inline-block;
+}
+
+.navBar ul li:not(:last-child):after {
+		padding-top: 2px;
+	content: "|";
+	}
 
 head{
   border-bottom:4px solid black;
@@ -100,4 +100,46 @@ head{
     padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+/* Designer page*/
+#designerWrapper {
+	display: inline;
+}
+
+#designerLeft {
+	width: 70%;
+	overflow-x: scroll;
+	float: left;
+}
+
+#designerRight {
+	border-left: 2px dashed black;
+	padding-left: 1rem;
+	margin-top: 2rem;
+	width: 28%;
+	height:auto;
+	float: right;
+}
+
+#designerWindow {
+	border: 1px solid #000000;
+	display: block;
+	margin: 0 auto;
+}
+
+#designerInstructions {
+	clear: both;
+}
+
+#designerInstructions h3 {
+	text-align: center;
+}
+
+#designerInstructions ul li {
+	display: block;
+}
+
+#designerWrapper #gnome {
+	clear: both;
 }
