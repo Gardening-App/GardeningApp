@@ -1,0 +1,41 @@
+/* Designer page*/
+#designerWrapper {
+	display: inline;
+}
+
+#designerLeft {
+	width: 70%;
+	overflow-x: scroll;
+	float: left;
+}
+
+#designerRight {
+	border-left: 2px dashed black;
+	padding-left: 1rem;
+	margin-top: 2rem;
+	width: 28%;
+	height:auto;
+	float: right;
+}
+
+#designerWindow {
+	border: 1px solid #000000;
+	display: block;
+	margin: 0 auto;
+}
+
+#designerInstructions {
+	clear: both;
+}
+
+#designerInstructions h3 {
+	text-align: center;
+}
+
+#designerInstructions ul li {
+	display: block;
+}
+
+#designerWrapper #gnome {
+	clear: both;
+}
