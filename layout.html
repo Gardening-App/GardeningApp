@@ -1,0 +1,67 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About page</title>
+</head>
+<div class="social-links">
+    <ul class="d-flex">
+      <li><a><i class="fa fa-facebook"></i></a></li>
+      <li><a><i class="fa fa-youtube"></i></a></li>
+      <li><a><i class="fa fa-instagram"></i></a></li>
+    </ul>
+  </div>
+<div class="navBar">
+    
+    <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="layout.html">Layout</a></li>
+        <li><a href="shop.html">Shop</a></li>
+         <li><a href="social.html">Social</a></li>
+        <li></ul>
+</div>
+
+<p id="name">The Gardening Gnome <img src="images/gnome.webp" width="3%"></p>
+<div id="pages">
+    <h1>Garden layout designer</h1>
+</div>
+<body>
+
+	<div id = 'designerWrapper'>
+
+		<div id = 'designerLeft'>
+			<canvas id = 'designerWindow' width = '600' height = '400'></canvas>
+		</div>
+		
+		<div id = 'designerRight'>
+			<h3>Controls:</h3>
+
+			<form>
+				<input type = "button" id = "new" value = "New"><br><br>
+				<input type = "button" id = "save" value = "Save"><br><br>	
+				<textarea name="data" cols="30" rows="5"></textarea><br><br>
+				<input type = "button" id = "load" value = "Load">
+			</form>
+			
+		</div>
+
+		<div id = 'designerInstructions'>
+			<h3>Instructions</h3>
+				<ul>
+					<li>Click and drag to create grid</li>
+					<li>Use buttons on right</li>
+
+				</ul>
+		
+			</div>
+		
+		<img id="gnome" src="images/gnome.webp">
+	</div>
+
+    
+		<script src = 'Js/designer.js'></script>
+
+</body>
+</html>
