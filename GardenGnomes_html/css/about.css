@@ -1,49 +1,3 @@
-body {
-    background-color: #f1f1f1;
-    padding: 20px;
-    font-family: Arial;
-    border-bottom:4px solid black;
-  }
-ul li {
-	display: inline-block;
-}
-
-.navBar ul li:not(:last-child):after {
-		padding-top: 2px;
-	content: "|";
-	}
-
-head{
-  border-bottom:4px solid black;
-}
-#name {
-  text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: large;
-}
-  .navBar{
-    position: absolute;
-    right:-1px;
-    top:2px;
-    
-  }
-
-  .navBar a {
-    position: relative;
-    float: right;
-    color:green;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17pxx;
-    cursor: pointer;
-  
-}
-.navBar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
 #gardening {
     padding-top: 4%;
     padding-left: 0%;
@@ -52,6 +6,9 @@ head{
     height: 40%;
 }
 
+/*
+ positions the gnome image next to the main page text
+*/
 #gnome{
   
     width: 10%;
@@ -60,11 +17,22 @@ head{
     padding-left: 5%;
     padding-right: 2%
 }
+
+/*
+positions the text under the three images
+*/
 #pagesNames{
   text-align: center;
   padding-left: 5%;
     padding-right: 5%
 
+}
+
+/*
+taking away defaut margins so The title can be positioned correctly
+*/
+p {
+  margin: 0;
 }
 
 #pagesNames ul li{
@@ -90,7 +58,9 @@ head{
 
 
 
-
+/*
+Positioning paragraphs next to gnome image
+*/
 #welcome {
     padding-top: 7%;
     padding-left: 5%;
@@ -100,46 +70,4 @@ head{
     padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
-}
-
-/* Designer page*/
-#designerWrapper {
-	display: inline;
-}
-
-#designerLeft {
-	width: 70%;
-	overflow-x: scroll;
-	float: left;
-}
-
-#designerRight {
-	border-left: 2px dashed black;
-	padding-left: 1rem;
-	margin-top: 2rem;
-	width: 28%;
-	height:auto;
-	float: right;
-}
-
-#designerWindow {
-	border: 1px solid #000000;
-	display: block;
-	margin: 0 auto;
-}
-
-#designerInstructions {
-	clear: both;
-}
-
-#designerInstructions h3 {
-	text-align: center;
-}
-
-#designerInstructions ul li {
-	display: block;
-}
-
-#designerWrapper #gnome {
-	clear: both;
 }
