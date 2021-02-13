@@ -1,0 +1,40 @@
+#login {
+	border-color: rgb(142, 199, 85);
+	border-width: 8px;
+	border-style: solid;
+	border-radius: 12px;
+	height: 40%;
+	width: 60%;
+	position: relative;
+	margin: auto;
+	
+	top: 8rem;
+}
+
+#login p {
+	font-weight: bolder;
+	
+	font-size: 40px;
+	padding-top: 5px;
+	padding-left: 30px;
+	background-color: rgb(142, 199, 85);
+	height: 55px;
+	color: rgba(255, 255, 255, 0.79);
+}
+
+#login a {
+	width: 20%;
+	padding:10px 0px ;
+	position: relative;
+	font-weight: bolder;
+	font-size: 20px;
+	border-radius: 12px;
+	top: 250px;
+	margin: auto;
+	background-color: rgb(142, 199, 85);
+	color: rgba(255, 255, 255, 0.79);
+	display: block;
+	text-align: center;
+	padding-top: 
+	
+}

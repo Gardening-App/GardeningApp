@@ -2,6 +2,12 @@
 container css for the navbar/ social links
 */
 
+
+#header{
+ background-color: rgb(142, 199, 85);
+ height: 11rem;	
+}
+
 .navWrapper{
     width: 100%;
     padding: 0%;
@@ -94,3 +100,5 @@ p {
       background-color: #ddd;
       color: black;
   }
+
+	
