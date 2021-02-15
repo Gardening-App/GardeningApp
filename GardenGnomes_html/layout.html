@@ -31,36 +31,46 @@
 <body>
 
 	<div id = 'designerWrapper'>
-
+		
 		<div id = 'designerLeft'>
+			<span id = 'dimX'>60'</span>
 			<canvas id = 'designerWindow' width = '600' height = '400'></canvas>
+			<span id = 'dimY'>40'</span>
 		</div>
 		
 		<div id = 'designerRight'>
 			<h3>Controls:</h3>
 
 			<form>
+				<label for="CropType">Crop Type:</label>
+				<select id="cropType">
+					<option value="Tomato">Tomato</option>
+					<option value="Potato">Potato</option>
+					<option value="Corn">Corn</option>
+				</select><br><br>
 				<input type = "button" id = "new" value = "New"><br><br>
 				<input type = "button" id = "save" value = "Save"><br><br>	
-				<textarea name="data" cols="30" rows="5"></textarea><br><br>
+				<textarea id="data" cols="30" rows="5"></textarea><br><br>
 				<input type = "button" id = "load" value = "Load">
 			</form>
 			
 		</div>
-
-		<div id = 'designerInstructions'>
-			<h3>Instructions</h3>
-				<ul>
-					<li>Click and drag to create grid</li>
-					<li>Use buttons on right</li>
-
-				</ul>
-		
-			</div>
-		
 	</div>
 
-    
+	<div id = 'designerInstructions'>
+		<h3>Instructions</h3>
+			<ul>
+				<li>Click and drag to create crop</li>
+				<li>Use buttons on right</li>
+				<li>Press "D" to delete seleced crop</li>
+
+			</ul>
+
+		</div>
+		
+	
+
+    <script src = "Js/jquery-3.5.1.min.js"></script>
 		<script src = 'Js/designer.js'></script>
 
 </body>
