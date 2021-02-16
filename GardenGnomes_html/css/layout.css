@@ -1,21 +1,28 @@
 /* Designer page*/
+#pages {
+	border-top: 1px solid black;
+	padding-top: 2rem;
+}
+
 #designerWrapper {
-	display: inline;
+	display: flex;
+	flex-direction: row;
 }
 
 #designerLeft {
+	position:relative;
 	width: 70%;
 	overflow-x: scroll;
-	float: left;
+/*	float: left;*/
 }
 
 #designerRight {
 	border-left: 2px dashed black;
 	padding-left: 1rem;
-	margin-top: 2rem;
+	padding-top: 2rem;
 	width: 28%;
 	height:auto;
-	float: right;
+/*	float: right;*/
 }
 
 #designerWindow {
@@ -25,7 +32,8 @@
 }
 
 #designerInstructions {
-	clear: both;
+	position: relative;
+	padding-bottom: 2rem;
 }
 
 #designerInstructions h3 {
@@ -38,4 +46,18 @@
 
 #designerWrapper #gnome {
 	clear: both;
+}
+
+#dimX {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+/*	border: 1px solid blue;*/
+}
+
+#dimY {
+	position: absolute;
+	right: 10%;
+	top: 50%;
 }
