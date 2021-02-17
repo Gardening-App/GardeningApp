@@ -11,25 +11,30 @@
 
 <body>
 	<div id ="wrapper">
-    <div class="social-links">
-      <ul class="d-flex">
-        <li><a><i class="fa fa-facebook"></i></a></li>
-        <li><a><i class="fa fa-youtube"></i></a></li>
-        <li><a><i class="fa fa-instagram"></i></a></li>
-      </ul>
-    </div>
-    <div class="navBar">
+<div class="navWrapper">
+<div class="social-links">
+    <ul class="d-flex">
+      <li><a><i class="fa fa-facebook"></i></a></li>
+      <li><a><i class="fa fa-youtube"></i></a></li>
+      <li><a><i class="fa fa-instagram"></i></a></li>
+       
+    </ul>
+  </div>
+<div class="navBar">
     
-      <ul>
+    
+    <ul>
         <li><a href="about.html">About</a></li>
         <li><a href="layout.html">Layout</a></li>
         <li><a href="shop.html">Shop</a></li>
-        <li><a href="social.php">Social</a></li>
-        <li>
-      </ul>
+         <li><a href="social.php">Social</a></li>
+        <li></ul>
 </div>
 
+
 <p id="name">The Gardening Gnome <img src="images/gnome.webp" width="3%"></p>
+<p id="slogan">A community for gardeners.</p>
+</div>
 
 <div id="pagesNames">
     <ul>
