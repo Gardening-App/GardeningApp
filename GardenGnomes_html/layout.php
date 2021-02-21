@@ -1,7 +1,11 @@
 <html>
 <head>
-		<link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/header.css">
+	<?php
+
+include("css/footer.php");
+include("css/header.php"); 
+?> 
+	<link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
