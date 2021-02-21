@@ -3,7 +3,12 @@
 <head>
 	<title>Garden Gnome</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/header.css">
+	<?php
+
+include("css/footer.php");
+include("css/header.php"); 
+?> 
+
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/social.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
