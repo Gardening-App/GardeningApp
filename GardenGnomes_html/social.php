@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Garden Gnome</title>
-  <meta charset="utf-8">
-	<?php
 
-include("css/footer.php");
-include("css/header.php"); 
-?> 
+<head>
+  <title>Garden Gnome</title>
+  <meta charset="utf-8">
+  <?php
+  include("css/header.php");
+  ?>
 
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/social.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<?php
+include("css/header.php");
+?>
 
 <body>
-	<div id ="wrapper">
+  <div id="wrapper">
 
 
-<div id="pagesNames">
-    <ul>
+    <div id="pagesNames">
+      <ul>
         <li>Shop our store</li>
         <li>Plan your garden</li>
         <li>view our blog</li>
-    </ul>
+      </ul>
 
-</div>
-		<div id ="comment">
+    </div>
+    <div id="comment">
 
       <h3>Garden News Forum</h3>
       <?php
@@ -43,8 +45,11 @@ include("css/header.php");
       </form>"
       ?>
     </div>
-		
+
   </div>
-	
+  <?php
+  include("css/footer.php");
+  ?>
 </body>
+
 </html>

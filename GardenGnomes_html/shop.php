@@ -1,23 +1,23 @@
 <html>
 
 <head>
-	<?php
+  <?php
 
-include("css/footer.php");
-include("css/header.php"); 
-?> 
+  include("css/footer.php");
+  include("css/header.php");
+  ?>
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/shop.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>Shop Page</title>
 </head>
 <?php
-include("css/header.php"); 
-?> 
+include("css/header.php");
+?>
 <h1>Shop</h1>
 <div id="pages">
 </div>
@@ -74,11 +74,11 @@ include("css/header.php");
       </figure>
     </div>
   </div>
-   
-	<?php
-include("css/footer.php");
 
-?> 
+  <?php
+  include("css/footer.php");
+
+  ?>
 </body>
 
 </html>
