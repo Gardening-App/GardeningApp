@@ -4,6 +4,8 @@ if (!session_id()) {
 	session_start();
 }
 
+include("css/footer.php");
+include("css/header.php"); 
 ?> 
 <html>
 <head>
@@ -16,27 +18,7 @@ if (!session_id()) {
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>About page</title>
 </head>
-<div class="navWrapper">
-<div class="social-links">
-    <ul class="d-flex">
-      <li><a><i class="fa fa-facebook"></i></a></li>
-      <li><a><i class="fa fa-youtube"></i></a></li>
-      <li><a><i class="fa fa-instagram"></i></a></li>
-    </ul>
-  </div>
-<div class="navBar">
-    
-    <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="layout.html">Layout</a></li>
-        <li><a href="shop.html">Shop</a></li>
-         <li><a href="social.html">Social</a></li>
-        <li></ul>
-</div>
 
-<p id="name">The Gardening Gnome <img src="images/gnome.webp" width="3%"></p>
-<p id="slogan">A community for gardeners.</p>
-	</div>
 <body>
 	<?php
 	$wrongMessage = '';
@@ -95,13 +77,5 @@ if (!session_id()) {
 	
 	
 </body>
-<footer>
-	<img src="images/gnome.webp">
-	<nav>
-		<a href="about.html">About</a>
-		<a href="layout.html">Layout</a>
-		<a href="shop.html">Shop</a>
-		<a href="social.html">Social</a>
-	</nav>
-</footer>
+
 </html>

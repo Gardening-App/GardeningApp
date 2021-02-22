@@ -1,10 +1,11 @@
 <footer>
 	<img src="images/gnome.webp">
 	<nav>
-		<a href="about.html">About</a>
-		<a href="layout.html">Layout</a>
-		<a href="shop.html">Shop</a>
-		<a href="social.html">Social</a>
+		<a href="about.php">About</a>
+		<a href="layout.php">Layout</a>
+		<a href="shop.php">Shop</a>
+		<a href="social.php">Social</a>
+		<a href="login.php">login</a>
 	</nav>
 </footer>
 

@@ -15,30 +15,9 @@ include("css/header.php");
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>Shop Page</title>
 </head>
-<div class="navWrapper">
-<div class="social-links">
-    <ul class="d-flex">
-      <li><a><i class="fa fa-facebook"></i></a></li>
-      <li><a><i class="fa fa-youtube"></i></a></li>
-      <li><a><i class="fa fa-instagram"></i></a></li>
-       
-    </ul>
-  </div>
-<div class="navBar">
-    
-    
-    <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="layout.html">Layout</a></li>
-        <li><a href="shop.html">Shop</a></li>
-         <li><a href="social.php">Social</a></li>
-        <li></ul>
-</div>
-
-
-<p id="name">The Gardening Gnome <img src="images/gnome.webp" width="3%"></p>
-<p id="slogan">A community for gardeners.</p>
-</div>
+<?php
+include("css/header.php"); 
+?> 
 <h1>Shop</h1>
 <div id="pages">
 </div>
@@ -96,15 +75,10 @@ include("css/header.php");
     </div>
   </div>
    
+	<?php
+include("css/footer.php");
 
+?> 
 </body>
-<footer>
-	<img src="images/gnome.webp">
-	<nav>
-		<a href="about.html">About</a>
-		<a href="layout.html">Layout</a>
-		<a href="shop.html">Shop</a>
-		<a href="social.html">Social</a>
-	</nav>
-</footer>
+
 </html>

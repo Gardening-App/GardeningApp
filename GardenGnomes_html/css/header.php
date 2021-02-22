@@ -9,11 +9,12 @@
 <div class="navBar">
     
     <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="layout.html">Layout</a></li>
-        <li><a href="shop.html">Shop</a></li>
-         <li><a href="social.html">Social</a></li>
-        <li></ul>
+        <li><a href="about.php">About</a></li>
+        <li><a href="layout.php">Layout</a></li>
+        <li><a href="shop.php">Shop</a></li>
+         <li><a href="social.php">Social</a></li>
+         <li><a href="social.php">Login</a></li>
+      </ul>
 </div>
 
 <p id="name">The Gardening Gnome <img src="images/gnome.webp" width="3%"></p>
