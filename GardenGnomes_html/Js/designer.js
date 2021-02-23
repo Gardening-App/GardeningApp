@@ -97,6 +97,7 @@ function addToDropDown(lastID, shapesString) {
 }
 
 $(function() {
+
 	var cropReference = {
 		"Tomato": "T",
 		"Potato": "P",
@@ -233,8 +234,9 @@ $(function() {
 	});
 
 	$('#new').click(function() {
-	plot.crops = [];
-	plot.drawScreen();
+		$('#cropName').val("");
+		plot.crops = [];
+		plot.drawScreen();
 	});
 
 	$('#save').click(function() {

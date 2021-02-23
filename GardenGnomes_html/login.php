@@ -1,8 +1,11 @@
 <?php
+include("css/footer.php");
+include("css/header.php"); 
 
 if (!session_id()) {
 	session_start();
 }
+
 
 ?> 
 <html>
@@ -16,42 +19,22 @@ if (!session_id()) {
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>About page</title>
 </head>
-<div class="navWrapper">
-<div class="social-links">
-    <ul class="d-flex">
-      <li><a><i class="fa fa-facebook"></i></a></li>
-      <li><a><i class="fa fa-youtube"></i></a></li>
-      <li><a><i class="fa fa-instagram"></i></a></li>
-    </ul>
-  </div>
-<div class="navBar">
-    
-    <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="layout.html">Layout</a></li>
-        <li><a href="shop.html">Shop</a></li>
-         <li><a href="social.html">Social</a></li>
-        <li></ul>
-</div>
 
-<p id="name">The Gardening Gnome <img src="images/gnome.webp" width="3%"></p>
-<p id="slogan">A community for gardeners.</p>
-	</div>
 <body>
 	<?php
 	$wrongMessage = '';
 	$triedLogin = false;
 
-	// Log out
+	// Log out if sent logOut
 	if (isset($_POST['logOut'])) {
-		$_SESSION['loggedIn'] = FALSE;
+		unset($_SESSION['loggedIn']);
 	}
 
-
-	if ((isset($_SESSION['loggedIn'])) || (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password']))) {
+	// Check to see if user is trying to log in
+	if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
 		
 
-		if ($_SESSION['loggedIn'] || ($_POST['username'] == 'user' && $_POST['password'] == '123')) {
+		if ($_POST['username'] == 'user' && $_POST['password'] == '123') {
 			$_SESSION['loggedIn'] = true;
 		} else {
 			$wrongMessage = 'Try user: user, password: 123';
@@ -62,15 +45,18 @@ if (!session_id()) {
 	<div id="login">
 		<p> Login </p>
 		<?php
-		if ($_SESSION['loggedIn']) {
+		// Display log out form if logged in
+		if (isset($_SESSION['loggedIn'])) {
 	?> 
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method = "post">
 
 			<input class="submit" type="submit" name="logOut" value = "Log out">
 		</form>
 	<?php
+		// Display login form if not logged in
 		} else {
-			if ($triedLogin == true) {
+			// Hint for logging in
+			if (isset($triedLogin)) {
 				echo ('<p>' . $wrongMessage . '</p>');
 			}
 
@@ -92,16 +78,7 @@ if (!session_id()) {
 		<?php }?>
 		
 	</div>
-	
-	
+
 </body>
-<footer>
-	<img src="images/gnome.webp">
-	<nav>
-		<a href="about.html">About</a>
-		<a href="layout.html">Layout</a>
-		<a href="shop.html">Shop</a>
-		<a href="social.html">Social</a>
-	</nav>
-</footer>
+
 </html>
