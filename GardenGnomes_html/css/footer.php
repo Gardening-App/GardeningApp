@@ -1,28 +1,28 @@
+<div class="footer">
 <footer>
 	<img src="images/gnome.webp">
 	<nav>
-		<a href="about.php">About</a>
-		<a href="layout.php">Layout</a>
-		<a href="shop.php">Shop</a>
-		<a href="social.php">Social</a>
-		<a href="login.php">login</a>
+		<a href="about.html">About</a>
+		<a href="layout.html">Layout</a>
+		<a href="shop.html">Shop</a>
+		<a href="social.html">Social</a>
 	</nav>
 </footer>
+</div>
 
-
-
-
+ 
 <style type="text/css">
-footer {
-	position: fixed;
-	bottom: 0px; 
-	left: 0px;
-	background-color: rgb(142, 199, 85);
-	width: 100%;
-	height: 50px;
-	
-}
 
+footer {
+ 
+ 
+  width: 100%;
+  background-color: rgb(142, 199, 85);
+  height: 50px;       
+  bottom: 0;  
+   
+  /* Footer height */
+}
 footer img{
 	width: auto;
 	height: 40px;
@@ -47,4 +47,6 @@ footer nav a{
 footer nav a:hover{
 	color: aqua;
 }
+ 
+
 </style>
