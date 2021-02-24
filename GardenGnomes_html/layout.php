@@ -1,6 +1,4 @@
 <?php
-include("css/header.php"); 
-include("css/footer.php");
 require("dbConnect.php");
 require("callQuery.php");
 ?> 
@@ -16,7 +14,11 @@ require("callQuery.php");
 	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>Designer page</title>
 </head>
-	
+<?php
+include("css/header.php");
+?>
+	  <div class="page-container">
+<div class="content-wrapper">
 <body>
 	<div id="pages">
 		<h1>Garden layout designer</h1>
@@ -101,6 +103,11 @@ require("callQuery.php");
 
 	<script src = "Js/jquery-3.5.1.min.js"></script>
 	<script src = 'Js/designer.js'></script>
-	
+ </div>
+  <?php
+  include("css/footer.php");
+
+  ?>
 </body>
+</div>
 </html>
