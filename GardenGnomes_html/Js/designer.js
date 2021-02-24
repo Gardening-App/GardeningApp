@@ -27,6 +27,7 @@ class Plot {
 		this.ctx = canvas.getContext('2d');
 		this.crops = [];
 		this.drawing = false;
+		this.name = "";
 		this.selectedCrop = {
 			crop: null,
 			index: -1
@@ -85,9 +86,18 @@ class Plot {
 }
 
 
+function addToDropDown(lastID, shapesString) {
 
+	$('#saveFile').append(
+        $('<option></option>').attr("value", shapesString).attr("sqlID", lastID).html($('#cropName').val()));
+
+	// $('#saveFile').append($('#cropName').val()).attr("value", shapesString).attr("sqlID", lastID).text($('#cropName').val());
+	// $('#saveFile').html($('#saveFile').html(),"<option value = '", shapesString, "' sqlID = '", 
+	// 		lastID, "'>", $('#cropName'), "</option>");
+}
 
 $(function() {
+
 	var cropReference = {
 		"Tomato": "T",
 		"Potato": "P",
@@ -224,26 +234,65 @@ $(function() {
 	});
 
 	$('#new').click(function() {
-	plot.crops = [];
-	plot.drawScreen();
+		$('#cropName').val("");
+		plot.crops = [];
+		plot.drawScreen();
 	});
 
 	$('#save').click(function() {
-		var data = ""
-		var types = ""
 
-		plot.crops.forEach((crop) => {
-				data += crop.x1 + "#" + crop.y1 + "#" + crop.x2 + "#" + crop.y2 + "#"
-				types += crop.cropType;
+		// See if plot exists with current name
+		oldID = -1;
+		$('#saveFile option').each(function(i) {
+		
+			//nth child is 1 indexed
+			selectString = '#saveFile option:nth-child(' + (i + 1) + ')';
+			console.log(i, 'th name is ', $(selectString).html());
+
+			if ($(selectString).html() == $('#cropName').val()) {
+				oldID = $(selectString).attr("sqlID");
+			}
+			
+		})
+		console.log("Old ID: ", oldID);
+
+		// Format crops to be transfered and stored in drop down
+		sendCrops = [];
+		coordsString = "";
+		typesString = "";
+		plot.crops.forEach(function(c) {
+			sendCrops.push([c.x1, c.y1, c.x2, c.y2, c.cropType]);
+			coordsString += c.x1 + "#" + c.y1 + "#" + c.x2 + "#" + c.y2 + "#";
+			typesString += c.cropType;
+
+		});
+		saveString = coordsString + typesString;
+
+		// Add to DB
+		$.post( "dbhandler.php", {operation: "write", name: $('#cropName').val(), crops: sendCrops, oldID: oldID});
+
+		// If title is new Add new crop to drop down
+
+		if (oldID == "-1") {
+			shapesString = coordsString + typesString;
+
+			$.post("dbhandler.php", {operation: "lastID"}, function(lastID) {
+				addToDropDown(lastID, shapesString);
 			});
+		} else {
+			$('#saveFile option:selected').val(saveString);
+		}
 
-		//data = data.slice(0, -1);
-		$('#data').text(data + types);
+		
+		
+
+		return false;
+		
 
 	});
 
 	$('#load').click(function() {
-		saveSplit = $('#data').val().split('#');
+		saveSplit = $('#saveFile').val().split('#');
 		try {
 			plot.crops = [];
 
@@ -253,11 +302,24 @@ $(function() {
 			}
 
 			plot.drawScreen();
+			$('#cropName').val($('#saveFile option:selected').text());
 
 		} catch {
 			alert("Invalid save data");
 		}
 		});
+
+	$('#delete').click(function() {
+
+		// Remove from DB w/ shapes and from drop down
+		console.log($('#saveFile option:selected').attr("sqlID"));
+		console.log("Sending ", $('#saveFile option:selected').attr("sqlID"), " to DBhandler");
+		$.post( "dbhandler.php", {operation: "delete", layoutID: $('#saveFile option:selected').attr("sqlID")});
+		
+		$('#saveFile option:selected').remove();
+	})
+
+	//$('#name')
 	
 	document.addEventListener('keyup', (e) => {
 
