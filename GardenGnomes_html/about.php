@@ -1,13 +1,14 @@
 <html>
+
 <head>
 
- 
+
     <link rel="stylesheet" href="css/about.css">
-    
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
 
 
@@ -17,42 +18,76 @@
 
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
- 
+
         gtag('config', 'G-GQZJBXV4ZH');
     </script>
 
-  <title>About page</title>
+    <title>About page</title>
 </head>
 
 
 <div class="page-container">
-<div class="content-wrapper">
-<body>
+    <div class="content-wrapper">
 
-    <?php
-        include("css/header.php"); 
-     ?> 
+        <body>
 
-<div id="pages">
-    <img id="shop" src="images/shop.jpeg">
-    <img id="plan" src="images/grid.jpeg">
-    <img id="blog" src="images/blog.jpeg">
-</div>
+            <?php
+            include("css/header.php");
+            ?>
 
-<div id="pagesNames">
-    <ul>
-        <li>Shop our store</li>
-        <li>Plan your garden</li>
-        <li>view our blog</li>
-    </ul>
+            <!-- <div id="pages">
+                <img id="shop" src="images/shop.jpeg">
+                <img id="plan" src="images/grid.jpeg">
+                <img id="blog" src="images/blog.jpeg">
+            </div>
 
-</div>
+            <div id="pagesNames">
+                <ul>
+                    <li>Shop our store</li>
+                    <li>Plan your garden</li>
+                    <li>view our blog</li>
+                </ul>
+
+            </div> -->
+
+
+            <figure class=figurePic>
+                <p><img class=scaled src="images/shop.jpeg" alt="Shop">
+                <figcaption>Shop out store</figcaption>
+            </figure>
+
+            <figure class=figurePic>
+                <p><img class=scaled src="images/grid.jpeg" alt="Plan Garden">
+                <figcaption>Plan your garden</figcaption>
+            </figure>
+
+            <figure class=figurePic>
+                <p><img class=scaled src="images/blog.jpeg" alt="Social Page">
+                <figcaption>View our social page</figcaption>
+            </figure>
+
+            <div id="welcomeText">
+                <p id="welcome">
+                    Do you ever get frustrated planning the layout of your garden and you can't remember what you have planted and where?
+                    Thats why we created Garden Gnomes. A community for gardening enthusiasts to plan and track their gardens. If you are
+                    new to gardening this is also a great place to learn and be social to see what other users are doing.
+                </p>
+
+                <p id="welcome2">
+                    Check out our fun and easy to use<a href="layout.html"> layout </a> feature to keep track of your garden.
+                    This feature allows you to pick what fruit you are going to plant and place it so you can see how it will align with
+                    your current set up.
+                </p>
+            </div>
 
 
 
-    <img id="gnome" src="images/gnome.webp">
+            <!-- <img id="gnome" src="images/gnome.webp">
 <p id="welcome">
     Do you ever get frustrated planning the layout of your garden and you can't remember what you have planted and where?
     Thats why we created Garden Gnomes. A community for gardening enthusiasts to plan and track their gardens. If you are
@@ -63,18 +98,19 @@
     Check out our fun and easy to use<a href="layout.html"> layout </a> feature to keep track of your garden. 
     This feature allows you to pick what fruit you are going to plant and place it so you can see how it will align with 
     your current set up. 
-</p>
-<br><br><br><br><br>
+</p> -->
+            <br><br><br><br><br>
 
-<script src="js/about.js"></script>
-<div id='calendar'></div>
-<br>
-</div>
+            <script src="js/about.js"></script>
+            <div id='calendar'></div>
+            <br>
+    </div>
 
-<?php
+    <?php
 
-    include("css/footer.php"); 
-?> 
+    include("css/footer.php");
+    ?>
 </div>
 </body>
+
 </html>

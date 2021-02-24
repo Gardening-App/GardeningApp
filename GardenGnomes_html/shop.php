@@ -1,29 +1,25 @@
 <html>
 
 <head>
- 
+
+  <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/shop.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>Shop Page</title>
 </head>
 <?php
-include("css/header.php");
-?>
+include("css/header.php"); 
+?> 
 <h1>Shop</h1>
 <div id="pages">
 </div>
-  <div class="page-container">
-<div class="content-wrapper">
 
 <body>
 
-  <p id="shopPage">
-    This is the shop page!
-  </p>
   <div class="row">
     <!-- Column 1 -->
     <div class="column">
@@ -65,17 +61,17 @@ include("css/header.php");
       </figure>
       <!-- Garden Gnome -->
       <figure>
-        <img src="images/shop/gardengnome.jpg">
+        <img id="buyGnome" src="images/shop/gardengnome.jpg">
         <figcaption>Garden Gnome</figcaption>
         <figcaption><a class="buy" href="https://www.amazon.com/dp/B004DFNDK2/ref=cm_sw_em_r_mt_dp_R87T6DFV5NJHQ2T4A72A?_encoding=UTF8&psc=1" target="_blank" rel="noopener noreferrer">Buy</a> - $16.83</figcaption>
       </figure>
     </div>
   </div>
- </div>
-  <?php
-  include("css/footer.php");
+   
+	<?php
+include("css/footer.php");
 
-  ?>
+?> 
 </body>
-</div>
+
 </html>
