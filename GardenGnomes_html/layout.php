@@ -10,6 +10,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
 	<title>About page</title>
 </head>
+<div class="page-container">
+<div class="content-wrapper">
 <?php
 include("css/header.php");
 ?>
@@ -18,8 +20,7 @@ include("css/header.php");
 	<h1>Garden layout designer</h1>
 </div>
 
-
-
+ 
 <body>
 
 	<div id='designerWrapper'>
@@ -64,9 +65,10 @@ include("css/header.php");
 
 	<script src="Js/jquery-3.5.1.min.js"></script>
 	<script src='Js/designer.js'></script>
+	</div>
 	<?php
 	include("css/footer.php");
 	?>
 </body>
-
+</div>
 </html>
