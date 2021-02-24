@@ -1,12 +1,7 @@
 <html>
 
 <head>
-  <?php
-
-  include("css/footer.php");
-  include("css/header.php");
-  ?>
-  <link rel="stylesheet" href="css/about.css">
+ 
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/shop.css">
