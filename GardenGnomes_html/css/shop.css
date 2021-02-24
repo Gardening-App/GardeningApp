@@ -7,14 +7,29 @@
 /* Create three equal columns that sits next to each other */
 .column {
   flex: 30%;
-  max-width: 30%;
+  max-width: 70%;
   padding: 0 4px;
+}
+
+figure {
+  width: 50%;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0.5em;
+  padding: 0.5em;
 }
 
 .column figure img {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
+}
+
+#buyGnome {
+  height: 25em;
 }
 
 .buy {
@@ -36,8 +51,8 @@ a:link {
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
-    flex: 50%;
-    max-width: 50%;
+    flex: 100%;
+    max-width: 100%;
   }
 }
 

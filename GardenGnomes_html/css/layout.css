@@ -61,3 +61,32 @@
 	right: 10%;
 	top: 50%;
 }
+
+
+/* Responsive layout - places desinger left below layout */
+@media screen and (max-width: 850px) {
+	
+	h1 {
+		text-align: center;
+	}
+
+	#designerwrapper {
+		display: block;
+	}
+
+	#designerLeft {
+		width: 100%;
+	}
+	
+	#designerRight {
+		position: relative;
+		overflow: auto;
+		float: left;
+		width: 300px;
+		left: 10px;
+	}
+
+	#designerInstructions ul li {
+		text-align: center;
+	}
+}

@@ -72,3 +72,50 @@
 footer {
 	display: none;
 }
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 725px) {
+	label {
+	  display: block;
+	  margin: auto 0;
+	}
+
+	input {
+		display: block;
+		margin: auto 0;
+	}
+
+	#login .submit {
+		position: relative;
+		top: 100px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	label {
+	  display: block;
+	  margin: auto 0;
+	}
+
+	input {
+		display: block;
+		margin: auto 0;
+	}
+
+	#login .submit {
+		width: 30%;
+		position: relative;
+		top: 100px;
+	}
+
+	#login div input {
+		width: 200px;
+		height: 30px;
+		margin-left: -35px;
+	}
+
+	#login .submit {
+	width: 30%;
+	}
+
+}
