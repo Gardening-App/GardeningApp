@@ -1,74 +1,65 @@
+<?php
+  date_default_timezone_set('America/Chicago');
+  require 'comments.php';
+  require 'sanitize.php';
+  require 'callQuery.php';
+  setComments($pdo);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Garden Gnome</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php
 
-  <title>Social Page</title>
+include("css/footer.php");
+include("css/header.php"); 
+?> 
 
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/social.css">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<div class="navWrapper">
-  <div class="social-links">
-    <ul class="d-flex">
-      <li><a><i class="fa fa-facebook"></i></a></li>
-      <li><a><i class="fa fa-youtube"></i></a></li>
-      <li><a><i class="fa fa-instagram"></i></a></li>
-    </ul>
-  </div>
-  <div class="navBar">   
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="layout.html">Layout</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="social.html">Social</a></li>
-    </ul>
-  </div>
-  
-  <p id="name">The Gardening Gnome <img src="images/gnome.webp" width="3%"></p>
-  
-  <p id="slogan">A community for gardeners.</p>
-</div>
-
-<div id="pages">
-  <h1>Garden News Forum</h1>
-</div>
 <body>
-  
-<div id ="comment">
-  
-<?php
-  echo "<form id='commentform'>
-             
-  <label for='commenter_name'>Name</label>
-  <input type='text' name='namebox' id='namebox' value='' tabindex='1'>
-        
-  <label for='comment'>Show us your goods!</label>
-  <textarea name='comment' id='comment' rows='10' tabindex='4'></textarea>
-        
-  <button type='submit' name='submit'>Submit</button>
+	<div id ="wrapper">
 
-  </form>"
-  ?>
+
+<div id="pagesNames">
+    <ul>
+        <li>Shop our store</li>
+        <li>Plan your garden</li>
+        <li>view our blog</li>
+    </ul>
+
 </div>
+		<div id ="comment">
 
+      <h3>Garden News Forum</h3>
+      <?php
+      
+
+      $error = "You stupid ahole";
+
+      echo "<form id='commentform' method='POST' action=''>
+        
+        <label for='comment'>Show us your goods!</label>
+        <input type='hidden' name='user_userID' value='Anonymous'>
+        <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+        <textarea name='comment' id='comment' rows='10' tabindex='4'></textarea>
+        
+        <button type='submit' name='commentSubmit'>Comment</button>
+
+      </form>";
+
+      getComments($pdo);
+
+      
+      ?>
+    </div>
+		
+  </div>
+	
 </body>
-
-<footer>
-	<img src="images/gnome.webp">
-	<nav>
-		<a href="about.html">About</a>
-		<a href="layout.html">Layout</a>
-		<a href="shop.html">Shop</a>
-		<a href="social.html">Social</a>
-	</nav>
-</footer>
-
 </html>
