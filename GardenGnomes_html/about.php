@@ -1,14 +1,12 @@
 <html>
-
 <head>
 
  
     <link rel="stylesheet" href="css/about.css">
-
+    
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
 
@@ -29,7 +27,8 @@
 </head>
 
 
-
+<div class="page-container">
+<div class="content-wrapper">
 <body>
 
     <?php
@@ -51,6 +50,8 @@
 
 </div>
 
+
+
     <img id="gnome" src="images/gnome.webp">
 <p id="welcome">
     Do you ever get frustrated planning the layout of your garden and you can't remember what you have planted and where?
@@ -68,13 +69,12 @@
 <script src="js/about.js"></script>
 <div id='calendar'></div>
 <br>
-
+</div>
 
 <?php
 
     include("css/footer.php"); 
 ?> 
-
+</div>
 </body>
-
 </html>
