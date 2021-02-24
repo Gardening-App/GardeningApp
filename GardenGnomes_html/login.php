@@ -4,8 +4,6 @@ if (!session_id()) {
 	session_start();
 }
 
-include("css/footer.php");
-include("css/header.php"); 
 ?> 
 <html>
 <head>
@@ -18,8 +16,13 @@ include("css/header.php");
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>About page</title>
 </head>
-
+<div class="page-container">
+<div class="content-wrapper">	
 <body>
+	<?php
+
+include("css/header.php"); 
+?> 
 	<?php
 	$wrongMessage = '';
 	$triedLogin = false;
@@ -75,7 +78,10 @@ include("css/header.php");
 		
 	</div>
 	
-	
+			</div>
+		<?php
+include("css/footer.php"); 
+?> 
 </body>
-
+</div>
 </html>
