@@ -11,29 +11,21 @@
 <head>
 	<title>Garden Gnome</title>
   <meta charset="utf-8">
+	<?php
 
+include("css/footer.php");
+include("css/header.php"); 
+?> 
+
+  <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/social.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-		<?php
 
- 
-include("css/header.php"); 
-?> 
-<div class="page-container">
-<div class="content-wrapper">
 <body>
 	<div id ="wrapper">
 
 
-<div id="pagesNames">
-    <ul>
-        <li>Shop our store</li>
-        <li>Plan your garden</li>
-        <li>view our blog</li>
-    </ul>
-
-</div>
 		<div id ="comment">
 
       <h3>Garden News Forum</h3>
@@ -58,13 +50,8 @@ include("css/header.php");
       
       ?>
     </div>
-</div>		
+		
   </div>
-		<?php
-
-include("css/footer.php");
-
-?> 
+	
 </body>
-</div>
 </html>
