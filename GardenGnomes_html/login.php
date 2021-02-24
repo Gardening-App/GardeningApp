@@ -17,7 +17,13 @@ if (!session_id()) {
   <title>About page</title>
 </head>
 
+<div class="page-container">
+<div class="content-wrapper">	
 <body>
+	<?php
+
+include("css/header.php"); 
+?> 
 	<?php
 	$wrongMessage = '';
 	$triedLogin = false;
@@ -75,6 +81,10 @@ if (!session_id()) {
 		<?php }?>
 		
 	</div>
+				</div>
+		<?php
+include("css/footer.php"); 
+?> 
 </body>
-
+</div>
 </html>
