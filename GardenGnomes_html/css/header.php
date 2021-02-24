@@ -6,21 +6,91 @@
       <li><a><i class="fa fa-instagram"></i></a></li>
     </ul>
   </div>
+  
 <div class="navBar">
-    
+ 
+
     <ul>
+    <div class="dropdown">
+  <button class="dropbtn">Account</button>
+  <div class="dropdown-content">
+    <a href="login.php">Login</a>
+    <a href="signup.php">Sign up</a>
+    
+  </div>
+  </div>
         <li><a href="about.php">About</a></li>
         <li><a href="layout.php">Layout</a></li>
         <li><a href="shop.php">Shop</a></li>
          <li><a href="social.php">Social</a></li>
-         <li><a href="social.php">Login</a></li>
-      </ul>
+        <li>
+        </ul>
+   
+        
 </div>
+
+
 
 <p id="name">The Gardening Gnome <img src="images/gnome.webp" width="3%"></p>
 <p id="slogan">A community for gardeners.</p>
+ 
 	</div>
+
+
+  
 <style type="text/css">
+/* Dropdown Button */
+.dropbtn {
+  background-color: Transparent;
+  color: #f1f1f1;
+   
+  font-size: 17px;
+  border: none;
+  
+  
+  
+  
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: left;
+  padding-top: 3px;
+  padding-right: 3px;
+   
+ 
+  
+   
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
 .navWrapper{
     width: 100%;
     padding: 0%;
@@ -101,7 +171,7 @@ p {
       text-align: center;
       padding: 5px 7px;
       text-decoration: none;
-      font-size: 17pxx;
+      font-size: 17px;
       cursor: pointer;
     
   }
