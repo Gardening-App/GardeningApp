@@ -11,11 +11,7 @@
 try {
     
     // Create a new instance of a PDO object
-<<<<<<< HEAD
     $pdo = new PDO('mysql:host=localhost:3306;dbname=webbooks', 'itsd', 'mysql');
-=======
-    $pdo = new PDO('mysql:host=localhost:3306;dbname=gardengnomes', 'itsd', 'mysql');
->>>>>>> Cody
     
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
@@ -24,15 +20,12 @@ try {
 
     $error = 'Unable to connect to the database server<br><br>' . $ex->getMessage();
     
-<<<<<<< HEAD
     if ($closeSelect) {
         echo "</select>";
         $closeSelect = false;
     }
     
     include 'error.html.php';
-=======
->>>>>>> Cody
     throw $ex;   // also show SQL system (syntax) errors  
     //exit();
     
