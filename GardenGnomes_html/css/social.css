@@ -1,5 +1,10 @@
+h3 {
+  margin-left: 2rem;
+}
+
 input, label {
-    display:block;
+  margin-left: 2rem;
+  display:block;
 }
 
 #comment input[type='text'],
@@ -16,6 +21,7 @@ textarea {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 1.2em;
   margin-bottom: 0.625rem;
+  margin-left: 2rem;
   display: block;
   width: 31.25rem;
   height: 12.5rem;
@@ -44,9 +50,27 @@ textarea {
 button {
   border: none;
   cursor: pointer;
+  margin-left: 2.2rem;
+  margin-bottom: 60px;
   width: 6.25rem;
   height: 1.563rem;
   font-weight: bold;
   color: #fff;
   background-color: #747C8F;
 }
+
+.commentbox{
+  width: 815px;
+  margin-left: 2rem;
+  padding: 20px;
+  margin-bottom: 4px;
+  border-top: 1px solid #000;
+}
+
+.commentbox p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 100;
+}
+
