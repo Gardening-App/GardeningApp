@@ -1,0 +1,82 @@
+#login {
+	border-color: rgb(142, 199, 85);
+	border-width: 8px;
+	border-style: solid;
+	border-radius: 12px;
+	height: 40%;
+	width: 60%;
+	position: relative;
+	margin: auto;
+	
+	top: 8rem;
+}
+
+#login p {
+	font-weight: bolder;
+	
+	font-size: 40px;
+	padding-top: 5px;
+	padding-left: 30px;
+	background-color: rgb(142, 199, 85);
+	height: 55px;
+	color: rgba(255, 255, 255, 0.79);
+}
+
+#login .submit {
+	width: 20%;
+	padding:10px 0px ;
+	position: relative;
+	font-weight: bolder;
+	font-size: 20px;
+	border-radius: 12px;
+	top: 140px;
+	margin: auto;
+	background-color: rgb(142, 199, 85);
+	color: rgba(255, 255, 255, 0.79);
+	display: block;
+	text-align: center;
+}
+
+#user {
+	position: relative;
+	top: 40px;
+	left: 150px
+}
+
+#pass {
+	position: relative;
+	top: 70px;
+	left: 150px;
+}
+
+#confirm {
+	position: relative;
+	top: 100px;
+	left: 50px;
+}
+
+#pass input {
+	position: relative;
+	left: 2px;
+}
+
+#login div input {
+	width: 200px;
+	height: 30px;
+	margin-left: 15px;
+}
+
+
+#login div label {
+	font-size: 25px;
+	font-weight: bolder;
+	position: relative;
+	top: 2px;
+	color: rgb(142, 199, 85);
+}
+
+
+
+footer {
+	display: none;
+}
