@@ -1,20 +1,11 @@
 <?php
-<<<<<<< HEAD
-=======
 include("css/footer.php");
 include("css/header.php"); 
->>>>>>> Cody
 
 if (!session_id()) {
 	session_start();
 }
 
-<<<<<<< HEAD
-include("css/footer.php");
-include("css/header.php"); 
-=======
-
->>>>>>> Cody
 ?> 
 <html>
 <head>
@@ -33,18 +24,6 @@ include("css/header.php");
 	$wrongMessage = '';
 	$triedLogin = false;
 
-<<<<<<< HEAD
-	// Log out
-	if (isset($_POST['logOut'])) {
-		$_SESSION['loggedIn'] = FALSE;
-	}
-
-
-	if ($_SESSION['loggedIn'] || (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password']))) {
-		
-
-		if ($_SESSION['loggedIn'] || ($_POST['username'] == 'user' && $_POST['password'] == '123')) {
-=======
 	// Log out if sent logOut
 	if (isset($_POST['logOut'])) {
 		unset($_SESSION['loggedIn']);
@@ -55,7 +34,6 @@ include("css/header.php");
 		
 
 		if ($_POST['username'] == 'user' && $_POST['password'] == '123') {
->>>>>>> Cody
 			$_SESSION['loggedIn'] = true;
 		} else {
 			$wrongMessage = 'Try user: user, password: 123';
@@ -66,27 +44,18 @@ include("css/header.php");
 	<div id="login">
 		<p> Login </p>
 		<?php
-<<<<<<< HEAD
-		if ($_SESSION['loggedIn']) {
-=======
 		// Display log out form if logged in
 		if (isset($_SESSION['loggedIn'])) {
->>>>>>> Cody
 	?> 
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method = "post">
 
 			<input class="submit" type="submit" name="logOut" value = "Log out">
 		</form>
 	<?php
-<<<<<<< HEAD
-		} else {
-			if ($triedLogin == true) {
-=======
 		// Display login form if not logged in
 		} else {
 			// Hint for logging in
 			if (isset($triedLogin)) {
->>>>>>> Cody
 				echo ('<p>' . $wrongMessage . '</p>');
 			}
 
@@ -108,12 +77,6 @@ include("css/header.php");
 		<?php }?>
 		
 	</div>
-<<<<<<< HEAD
-	
-	
-=======
-
->>>>>>> Cody
 </body>
 
 </html>
