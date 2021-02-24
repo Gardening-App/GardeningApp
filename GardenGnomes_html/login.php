@@ -1,6 +1,5 @@
 <?php
-include("css/footer.php");
-include("css/header.php"); 
+
 
 if (!session_id()) {
 	session_start();
@@ -9,7 +8,6 @@ if (!session_id()) {
 ?> 
 <html>
 <head>
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
