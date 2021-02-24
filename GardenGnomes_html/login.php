@@ -1,8 +1,7 @@
 <?php
 <<<<<<< HEAD
 =======
-include("css/footer.php");
-include("css/header.php"); 
+
 >>>>>>> Cody
 
 if (!session_id()) {
@@ -10,8 +9,7 @@ if (!session_id()) {
 }
 
 <<<<<<< HEAD
-include("css/footer.php");
-include("css/header.php"); 
+
 =======
 
 >>>>>>> Cody
@@ -27,7 +25,12 @@ include("css/header.php");
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>About page</title>
 </head>
-
+<?php
+ 
+include("css/header.php"); 
+?> 
+<div class="page-container">
+<div class="content-wrapper">
 <body>
 	<?php
 	$wrongMessage = '';
@@ -114,6 +117,12 @@ include("css/header.php");
 =======
 
 >>>>>>> Cody
-</body>
+	 </div>
+  <?php
 
+include("css/footer.php");
+ 
+?> 
+</body>
+</div>
 </html>
