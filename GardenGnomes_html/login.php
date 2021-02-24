@@ -1,18 +1,11 @@
 <?php
-<<<<<<< HEAD
-=======
-
->>>>>>> Cody
 
 if (!session_id()) {
 	session_start();
 }
 
-<<<<<<< HEAD
-
-=======
-
->>>>>>> Cody
+include("css/footer.php");
+include("css/header.php"); 
 ?> 
 <html>
 <head>
@@ -25,18 +18,12 @@ if (!session_id()) {
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
   <title>About page</title>
 </head>
-<?php
- 
-include("css/header.php"); 
-?> 
-<div class="page-container">
-<div class="content-wrapper">
+
 <body>
 	<?php
 	$wrongMessage = '';
 	$triedLogin = false;
 
-<<<<<<< HEAD
 	// Log out
 	if (isset($_POST['logOut'])) {
 		$_SESSION['loggedIn'] = FALSE;
@@ -47,18 +34,6 @@ include("css/header.php");
 		
 
 		if ($_SESSION['loggedIn'] || ($_POST['username'] == 'user' && $_POST['password'] == '123')) {
-=======
-	// Log out if sent logOut
-	if (isset($_POST['logOut'])) {
-		unset($_SESSION['loggedIn']);
-	}
-
-	// Check to see if user is trying to log in
-	if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
-		
-
-		if ($_POST['username'] == 'user' && $_POST['password'] == '123') {
->>>>>>> Cody
 			$_SESSION['loggedIn'] = true;
 		} else {
 			$wrongMessage = 'Try user: user, password: 123';
@@ -69,27 +44,15 @@ include("css/header.php");
 	<div id="login">
 		<p> Login </p>
 		<?php
-<<<<<<< HEAD
 		if ($_SESSION['loggedIn']) {
-=======
-		// Display log out form if logged in
-		if (isset($_SESSION['loggedIn'])) {
->>>>>>> Cody
 	?> 
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method = "post">
 
 			<input class="submit" type="submit" name="logOut" value = "Log out">
 		</form>
 	<?php
-<<<<<<< HEAD
 		} else {
 			if ($triedLogin == true) {
-=======
-		// Display login form if not logged in
-		} else {
-			// Hint for logging in
-			if (isset($triedLogin)) {
->>>>>>> Cody
 				echo ('<p>' . $wrongMessage . '</p>');
 			}
 
@@ -111,18 +74,8 @@ include("css/header.php");
 		<?php }?>
 		
 	</div>
-<<<<<<< HEAD
 	
 	
-=======
-
->>>>>>> Cody
-	 </div>
-  <?php
-
-include("css/footer.php");
- 
-?> 
 </body>
-</div>
+
 </html>
