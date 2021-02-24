@@ -21,6 +21,8 @@ include("css/header.php");
 <h1>Shop</h1>
 <div id="pages">
 </div>
+  <div class="page-container">
+<div class="content-wrapper">
 
 <body>
 
@@ -74,11 +76,11 @@ include("css/header.php");
       </figure>
     </div>
   </div>
-
+ </div>
   <?php
   include("css/footer.php");
 
   ?>
 </body>
-
+</div>
 </html>
