@@ -11,7 +11,7 @@
 try {
     
     // Create a new instance of a PDO object
-    $pdo = new PDO('mysql:host=localhost:3306;dbname=webbooks', 'itsd', 'mysql');
+    $pdo = new PDO('mysql:host=localhost:3306;dbname=gardengnomes', 'itsd', 'mysql');
     
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
