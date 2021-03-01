@@ -1,6 +1,13 @@
 <?php
+<<<<<<< Updated upstream
 include("css/header.php"); 
 include("css/footer.php");
+=======
+if (!session_id()) {
+	session_start();
+}
+
+>>>>>>> Stashed changes
 require("dbConnect.php");
 require("callQuery.php");
 ?> 
@@ -44,37 +51,46 @@ require("callQuery.php");
 				<input type = "submit" name = "save" id = "save" value = "Save" return = "False"><br><br>	
 				<select id="saveFile">
 	<?php
+		// Check to see if user is logged in
+		if (isset($_SESSION['loggedIn'])) {
 
-		try {
-			$query = "SELECT * FROM layout
-				WHERE userId = 1";
-			$errorMessage = "Error retrieving layouts";
-			$layoutResult = callQuery($pdo, $query, $errorMessage);
+			try {
+				
+				$userID = $_SESSION['userID'];
+				$query = "SELECT * FROM layout
+					WHERE userId = $userID";
+				$errorMessage = "Error retrieving layouts";
+				$layoutResult = callQuery($pdo, $query, $errorMessage);
 
 
-			// Query through layouts associated with current user
-			while ($row = $layoutResult->fetch()) {
+				// Query through layouts associated with current user
+				while ($row = $layoutResult->fetch()) {
 
-				//Sub query to get all shapes for that layout
-				$query = "SELECT * FROM shape
-						WHERE layoutID = " . $row['layoutID'];
-				$errorMessage = "Error retrieving shapes";
-				$shapesResult = callQuery($pdo, $query, $errorMessage);
+					//Sub query to get all shapes for that layout
+					$query = "SELECT * FROM shape
+							WHERE layoutID = " . $row['layoutID'];
+					$errorMessage = "Error retrieving shapes";
+					$shapesResult = callQuery($pdo, $query, $errorMessage);
 
-				$coords = "";
-				$types = "";
+					$coords = "";
+					$types = "";
 
-				// Build shapes string to put in option tag
-				while ($shapeRow = $shapesResult->fetch()) {
-					$coords .= $shapeRow['x1'] . '#' . $shapeRow['y1'] . '#' . $shapeRow['x2'] . '#' . $shapeRow['y2'] . '#';
-					$types .= $shapeRow['cropType'];
+					// Build shapes string to put in option tag
+					while ($shapeRow = $shapesResult->fetch()) {
+						$coords .= $shapeRow['x1'] . '#' . $shapeRow['y1'] . '#' . $shapeRow['x2'] . '#' . $shapeRow['y2'] . '#';
+						$types .= $shapeRow['cropType'];
+					}
+					$shapesString = $coords . $types;
+
+					echo "<option value = '$shapesString' sqlID = '$row[layoutID]'>$row[layoutName]</option>";
 				}
-				$shapesString = $coords . $types;
 
-				echo "<option value = '$shapesString' sqlID = '$row[layoutID]'>$row[layoutName]</option>";
+			} catch(exception $e) {
+				echo "<option value = '' sqlID = ''>Error connecting</option>";
 			}
-		} catch(exception $e) {
-			echo "<option value = '' sqlID = ''>Error connecting</option>";
+
+		} else { //User is not logged in
+			echo "<option value = '' sqlID = ''>Please log in</option>";
 		}
 		
 	?>
@@ -98,7 +114,10 @@ require("callQuery.php");
 	
 	</div>
 		
-
+	<!-- Get post data -->
+	<script type="text/javascript">
+    var userID="<?php echo $_SESSION['userID'];?>";
+    </script>
 	<script src = "Js/jquery-3.5.1.min.js"></script>
 	<script src = 'Js/designer.js'></script>
 	

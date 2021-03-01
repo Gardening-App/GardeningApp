@@ -1,26 +1,12 @@
 <?php
+    if (!session_id()) {
+        session_start();
+    }
+
 	require("dbConnect.php");
 	require("callQuery.php");
+    require("dbfunctions.php");
 
-    function getLastID($pdo) {
-        $sql = "SELECT max(layoutID) AS ID FROM layout";
-        $errorMessage = "Error fetching ID";
-        $response = callQuery($pdo, $sql, $errorMessage);
-        while ($row = $response->fetch()) {
-            $layoutID = $row['ID'];
-        }
-
-        return $layoutID;
-
-    function deleteFromShapes($pdo, $layoutID) {
-        echo ($layoutID);
-        $sql = "DELETE FROM shape
-        WHERE layoutID = $layoutID";
-        //echo("<script>alert($layoutID)</script>");
-        $errorMessage = "Error removing shapes";
-        callQuery($pdo, $sql, $errorMessage);
-    }
-    }
 
     //INSERT INTO `gardengnomes`.`layout` (`userID`, `layoutName`) VALUES ('1', 'Test3')
 
@@ -87,5 +73,17 @@
         callQuery($pdo, $sql, $errorMessage);
 
         //deleteFromShapes($pdo, $layoutID);
+    }
+
+    if ($_POST['operation'] == 'checkLogin') {
+        // Set to 0 for not logged in
+        $userID = 0;
+
+        if (isset($_SESSION['loggedIn'])) {
+            $userID = $_SESSION['userID'];
+        }
+
+        echo($userID);
+        return $userID;
     }
 ?>
