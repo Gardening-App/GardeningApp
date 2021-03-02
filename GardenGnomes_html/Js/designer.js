@@ -22,9 +22,9 @@ class Crop {
 class Plot {
 	tempCrop = null;
 	
-	constructor(canvas) {
-		this.canvas = canvas
-		this.ctx = canvas.getContext('2d');
+	constructor(canvas, ctx) {
+		this.canvas = canvas;
+		this.ctx = ctx;
 		this.crops = [];
 		this.drawing = false;
 		this.name = "";
@@ -96,6 +96,20 @@ function addToDropDown(lastID, shapesString) {
 	// 		lastID, "'>", $('#cropName'), "</option>");
 }
 
+function notLoggedIn(canvas, ctx) {
+	ctx.font = "30px Arial";
+	ctx.fillStyle = "black";
+	ctx.textAlign = "center";
+	ctx.fillText("Please Log in to use this feature", canvas.width / 2, canvas.height / 2); 
+	
+	$('#designerRight').html("");
+	$('#designerInstructions').html("");
+}
+
+function positionDims(canvas, plot) {
+	$('#dimY').css('left', (plot.rect.width + $('#designerWindow').offset().left + 5) +'px');
+}
+
 $(function() {
 
 	var cropReference = {
@@ -107,12 +121,22 @@ $(function() {
 	var selectedCropType = cropReference["Tomato"];
 	
 	var canvas = document.getElementById('designerWindow');
+	var ctx = canvas.getContext('2d');
 
-	plot = new Plot(canvas);
+	plot = new Plot(canvas, ctx);
+	positionDims(canvas, plot);
+
+
+	// Stop running if user isn't logged in.
+	if (userID == 0 || userID == null) {
+		notLoggedIn(canvas, ctx);
+		return false;
+	}
 
 	// Main window resized
 	$(window).on('resize', function() {
 		plot.setRect();
+		positionDims(canvas, plot);
 	})
 
 	// Track mouse inside canvas
@@ -280,6 +304,7 @@ $(function() {
 				addToDropDown(lastID, shapesString);
 			});
 		} else {
+			// Update dropdown listing
 			$('#saveFile option:selected').val(saveString);
 		}
 
