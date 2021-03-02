@@ -21,33 +21,49 @@ if (!session_id()) {
 <div class="content-wrapper">	
 <body>
 	<?php
-
+require("dbConnect.php");
+require("callQuery.php");
+require("dbfunctions.php");
 include("css/header.php"); 
+
 ?> 
 	<?php
-	$wrongMessage = '';
+	$wrongMessage = 'Username or password error';
 	$triedLogin = false;
+
 
 	// Log out if sent logOut
 	if (isset($_POST['logOut'])) {
 		unset($_SESSION['loggedIn']);
+		$_SESSION['userID'] = 0;
 	}
 
 	// Check to see if user is trying to log in
 	if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
 		
+	
+		// Check to see if username exists
+		$query = "SELECT * FROM user
+				WHERE username = '" . $_POST['username'] . "'";
+		$errorMessage = "Error querying user names";
+		$queryRes = callQuery($pdo, $query, $errorMessage);
 
-		if ($_POST['username'] == 'user' && $_POST['password'] == '123') {
-			$_SESSION['loggedIn'] = true;
-		} else {
-			$wrongMessage = 'Try user: user, password: 123';
+		if ($userRes = $queryRes->fetch()) {
+
+			//Check to see if password matches and set session vars if so
+			if($_POST['password'] == $userRes['password']) {
+				$_SESSION['loggedIn'] = true;
+				$_SESSION['userID'] = $userRes['userID'];
+			} 
 		}
 
 		$triedLogin = true;
 	} 	?> 
+
 	<div id="login">
 		<p> Login </p>
-		<?php
+
+	<?php
 		// Display log out form if logged in
 		if (isset($_SESSION['loggedIn'])) {
 	?> 
@@ -58,8 +74,8 @@ include("css/header.php");
 	<?php
 		// Display login form if not logged in
 		} else {
-			// Hint for logging in
-			if (isset($triedLogin)) {
+			// Show wrong log in message on failed log in
+			if (isset($triedLogin) and $triedLogin) {
 				echo ('<p>' . $wrongMessage . '</p>');
 			}
 
