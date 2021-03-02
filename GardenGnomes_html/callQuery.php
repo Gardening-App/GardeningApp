@@ -9,7 +9,7 @@ function callQuery($pdo, $query, $error) {
     return $pdo->query($query);
   } catch (PDOException $ex) {
 
-    $error .= $ex->message();
+    $error .= $ex;
     include 'error.html.php';
     throw $ex;
     //exit();
