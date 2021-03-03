@@ -43,9 +43,7 @@
         
         <button type='submit' id='commentSubmit' name='commentSubmit'>Comment</button>
         
-        </form>
-
-        <form id='delete' method='POST' action=''>";
+        </form>";
         
         getComments($pdo);
         
