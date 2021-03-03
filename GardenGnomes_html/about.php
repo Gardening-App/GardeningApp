@@ -68,11 +68,17 @@
             </div>
 <br><br><br><br><br>
 
+<!-- Logged in false by default -->
+<script>
+var loggedIn = false;
+
 <?php
-if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true)
+if (isset($_SESSION['userID']) && $_SESSION['userID'] == 1)
 {
  ?>
-<script>
+loggedIn = true;
+<?php }?> 
+
 $(document).ready(function() {
   var calendar = $('#calendar').fullCalendar({
    editable:true,
@@ -86,6 +92,12 @@ $(document).ready(function() {
    selectHelper:true,
    select: function(start, end, allDay)
    {
+
+    // Kill functionality if not logged in
+    if (!loggedIn) {
+      return false;
+    }
+
     var title = prompt("Enter Event Title");
     if(title)
     {
@@ -167,7 +179,8 @@ $(document).ready(function() {
   });
 
 });</script>
-<?php } else { ?>
+<?php if (!isset($_SESSION['userID']) || $_SESSION['userID'] != 1)
+{ ?>
 <p>Please log in to take advantage of our calendar!</p>
 <?php
 } 
