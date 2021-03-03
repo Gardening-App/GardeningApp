@@ -14,9 +14,13 @@
     <div class="dropdown">
   <button class="dropbtn">Account</button>
   <div class="dropdown-content">
-    <a href="login.php">Login</a>
-    <a href="signup.php">Sign up</a>
-    
+    <?php
+    if (isset($_SESSION['loggedIn'])) {
+      echo "<a href='login.php'>Logout</a>";
+    } else {
+    echo "<a href='login.php'>Login</a><a href='signup.php'>Sign up</a>";
+    }
+    ?>
   </div>
   </div>
         <li><a href="about.php">About</a></li>
@@ -70,7 +74,7 @@
   display: none;
   position: absolute;
   background-color: transparent;
-  min-width: 160px;
+
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -100,7 +104,7 @@
   }
   
   body {
-      background-color: #f1f1f1;
+      background-color: #FCFCFC;
       padding: 0;
       margin: 0;
       font-family: Arial;
