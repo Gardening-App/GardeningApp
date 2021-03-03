@@ -30,4 +30,16 @@
 
         return $userID;
     }
+
+    function getLastUsername($pdo, $userID) {
+        $sql = "SELECT username FROM user
+                WHERE userID ='" . $userID . "'";
+        $errorMessage = "Error fetching ID";
+        $response = callQuery($pdo, $sql, $errorMessage);
+        while ($row = $response->fetch()) {
+            $username = $row['username'];
+        }
+
+        return $username;
+    }
 ?> 
