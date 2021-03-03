@@ -9,17 +9,10 @@ input, label {
 
 #comment input[type='text'],
 
-#namebox {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 1.2em;
-  margin-bottom: 0.625rem;
-  width: 12.5rem;
-  border: 0.063rem solid rgba(0, 0, 0, 0.1);
-}
-
 textarea {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0);
   margin-bottom: 0.625rem;
   margin-left: 2rem;
   display: block;
@@ -47,7 +40,7 @@ textarea {
   z-index: -1;
 }
 
-button {
+#commentSubmit {
   border: none;
   cursor: pointer;
   margin-left: 2.2rem;
@@ -57,14 +50,50 @@ button {
   font-weight: bold;
   color: #fff;
   background-color: #747C8F;
+  box-shadow: 5px 3px 15px 1px rgba(0, 0, 0, 0.24);
+  outline: none; 
+  transition: 0.2s all; 
 }
 
-.commentbox{
-  width: 815px;
+#commentSubmit:active {
+  transform: scale(0.98); 
+  box-shadow: 3px 2px 12px 1px rgba(0, 0, 0, 0.24); 
+}
+
+.commentDelete {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  bottom: 10px;
+  right: 25px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.commentbox { 
+  position: relative;
+  width: 815px; 
   margin-left: 2rem;
+  margin-bottom: 10px;
   padding: 20px;
-  margin-bottom: 4px;
-  border-top: 1px solid #000;
+  padding-bottom: 40px;
+  background: white;  
+  border-radius: 20px;
+  box-shadow: 0px 5px 20px 0px;
+  z-index: 1;
+} 
+
+.commentbox::after { 
+  bottom: -30px; 
+  background: rgb(43, 42, 42); 
+  width: 90%; 
+  height:4px; 
+  border-radius:50%; 
+}
+
+.commentbox:hover .commentDelete {
+  display: block;
 }
 
 .commentbox p {
@@ -73,4 +102,3 @@ button {
   line-height: 16px;
   font-weight: 100;
 }
-
