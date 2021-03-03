@@ -56,6 +56,7 @@ $success = false;
 			echo('Thanks for signing up');
 			$_SESSION['loggedIn'] = true;
 			$_SESSION['userID'] = getLastUserID($pdo);
+			$_SESSION['username'] = getLastUsername($pdo, $_SESSION['userID']);
 		}
 	}
 
