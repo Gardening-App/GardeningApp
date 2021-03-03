@@ -1,0 +1,7 @@
+INSERT INTO shop (item,  discription, price, picture, link, user_userID)
+VALUES ('40 Seed Variety', '40 different seeds to start your garden!', '24.99', 'images/shop/seeds.jpg', 'https://www.amazon.com/dp/B06XDT5MLT/ref=cm_sw_em_r_mt_dp_P2FYST9FNW4EAADP7ZQN?_encoding=UTF8&psc=1', '1'),
+	('Lights - 12 pack', '12 pack of lights to give your garden shine at night!', '20.49', 'images/shop/lights.jpg', 'https://www.amazon.com/dp/B082MHLDQJ/ref=cm_sw_em_r_mt_dp_467HE82DGSJ06HSFABPH', '1'),
+	('Garden Tool Set', 'Make work easy with this garden tool set!', '19.99', 'images/shop/toolset.jpg', 'https://www.amazon.com/dp/B08C7HXJR9/ref=cm_sw_em_r_mt_dp_0PRMMRRJEFXDQEXV0EXK?_encoding=UTF8&psc=1', '1'),
+    ('Plant Food - 12 pack', 'Make sure your plants are feed with this plant food!', '4.59', 'images/shop/plantfood.jpg', 'https://www.amazon.com/dp/B000F6XGZ0/ref=cm_sw_em_r_mt_dp_8NHNXNW4KQKJPRHD7YSV', '1'),
+    ('Expandable Hose', 'Easy to use hose, with none of the tangles!', '28.86', 'images/shop/hose.jpg', 'https://www.amazon.com/dp/B083PZ87JR/ref=cm_sw_em_r_mt_dp_04X1M3E8XX1VRTE0C9HA?_encoding=UTF8&psc=1', '1'),
+    ('Garden Gnome', 'Make sure to get your garden gnome to guard and look after your garden!', '16.83', 'images/shop/gardengnome.jpg', 'https://www.amazon.com/dp/B004DFNDK2/ref=cm_sw_em_r_mt_dp_R87T6DFV5NJHQ2T4A72A?_encoding=UTF8&psc=1', '1');
