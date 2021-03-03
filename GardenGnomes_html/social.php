@@ -5,8 +5,7 @@
   require 'comments.php';
   require 'sanitize.php';
   require 'callQuery.php';
-  setComments($pdo);
-?>
+  setComments($pdo); ?>
 <html lang="en">
 <head>
 	<title>Garden Gnome</title>
@@ -24,33 +23,26 @@
 	<div id ="wrapper">
 		<div id ="comment">
 
-      <h3>Garden News Forum</h3>
+      <h3>Garden News Forum</h3><?php
 
-      <?php      
       if (!isset($_SESSION['loggedIn'])) {
-
         getComments($pdo);
-
       } else {
 
-
       echo "<form id='commentform' method='POST' action=''>
-        
+
         <label for='comment'>Show us your goods!</label>
         <input type='hidden' name='username' value='".$_SESSION['username']."'>
         <input type='hidden' name='userId' value='".$_SESSION['userID']."'>
-        <textarea name='comment' id='comment' rows='10' tabindex='4'></textarea>
-        
+        <textarea name='comment' id='comment' rows='10' tabindex='4'></textarea>        
         <button type='submit' id='commentSubmit' name='commentSubmit'>Comment</button>
         
         </form>";
         
-        getComments($pdo);
-        
-        
-      
-      }
-      ?>
+        getComments($pdo); 
+
+      } ?>
+
     </div> <!-- end div #comment -->		
   </div> <!-- end div #wrapper -->
 </div> <!-- end div .content-wrapper -->
@@ -59,9 +51,7 @@ if ( window.history.replaceState ) {
   window.history.pushState( null, null, window.location.href );
 }
 </script>
-
   <?php include("css/footer.php"); ?>
-  
 </body>
 </div> <!-- end div .page-container -->
 </html>

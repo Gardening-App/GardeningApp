@@ -19,15 +19,10 @@ function setComments($pdo) {
 
 function getComments($pdo) {
 
-  $sql = "SELECT username, 
-                 comment_date, 
+  $sql = "SELECT username, comment_date, comment, socialID, user_userID,
                  DATE_FORMAT(CONVERT(comment_date, date), '%m/%d/%y') AS date, 
-                 DATE_FORMAT(CONVERT(comment_date, time), '%h:%i %p') AS time, 
-                 comment,
-                 socialID,
-                 user_userID
-          FROM social 
-          ORDER BY comment_date DESC;";
+                 DATE_FORMAT(CONVERT(comment_date, time), '%h:%i %p') AS time 
+                 FROM social ORDER BY comment_date DESC;";
           
   $result = $pdo->query($sql);
 
@@ -56,7 +51,7 @@ function getComments($pdo) {
 
     $yesterday = ltrim(date("m/d/y", strtotime("-1 day", $currentDateTime)), "0");
 
-    echo "<div class='commentbox' id='$commentBoxId'><p><b>" . $row['username'] . "</b><br>";
+    echo "<div class='commentbox' id='$commentBoxId'><p><b>".$row['username']."</b><br>";
 
     if (($currentDateTime - $commentDateTime) <= 300) {
       echo "just commented...";
@@ -69,21 +64,19 @@ function getComments($pdo) {
     }
 
     if (isset($_SESSION['loggedIn'])) {
-      if ($_SESSION['userID'] == $commentUserId) {
+      if ($_SESSION['userID'] == $commentUserId) {     
 
-        
-
-        echo("<form id='delete" . $row['socialID']. "' method='POST' action=''>");
-
-        echo "<input type='hidden' name='commentId' value='".$row['socialID']."'>
-        <button type='delete' class='commentDelete id='delete' name='commentDelete'>Delete</button>;
+        echo "<form id='delete".$row['socialID']."' method='POST' action=''>
+        <input type='hidden' name='commentId' value='".$row['socialID']."'>
+        <button type='delete' class='commentDelete id='delete' name='commentDelete'>Delete</button>
         </form>";
+
         if (isset($_POST['commentDelete'])) {
-          
 
           $commentId = $_POST['commentId'];
           
-          $sqlDelete = "DELETE FROM social WHERE socialID = (?)";
+          $sqlDelete = "DELETE FROM social 
+                        WHERE socialID = (?)";
 
           $preppedSql = $pdo->prepare($sqlDelete);
 
@@ -92,15 +85,9 @@ function getComments($pdo) {
           echo '<script type="Js/removeDiv.js">',
           "removeDiv($commentBoxId);",
           '</script>';
-        }
-
-      
-
+        }     
       }
-
-    }
-    
-    echo "<br><br>$commentString</p></div>";
-
+    }  
+    echo "$commentString</p></div>";
   }
 }
