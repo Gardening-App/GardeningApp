@@ -70,10 +70,17 @@ function getComments($pdo) {
 
     if (isset($_SESSION['loggedIn'])) {
       if ($_SESSION['userID'] == $commentUserId) {
+
+        
+
+        echo("<form id='delete" . $row['socialID']. "' method='POST' action=''>");
+
         echo "<input type='hidden' name='commentId' value='".$row['socialID']."'>
-        <button type='delete' class='commentDelete id='delete' name='commentDelete'>Delete</button>";
+        <button type='delete' class='commentDelete id='delete' name='commentDelete'>Delete</button>;
+        </form>";
         if (isset($_POST['commentDelete'])) {
           
+
           $commentId = $_POST['commentId'];
           
           $sqlDelete = "DELETE FROM social WHERE socialID = (?)";
@@ -87,7 +94,7 @@ function getComments($pdo) {
           '</script>';
         }
 
-      "</form>";
+      
 
       }
 
