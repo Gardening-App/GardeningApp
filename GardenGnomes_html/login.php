@@ -54,6 +54,7 @@ include("css/header.php");
 			if($_POST['password'] == $userRes['password']) {
 				$_SESSION['loggedIn'] = true;
 				$_SESSION['userID'] = $userRes['userID'];
+				$_SESSION['username'] = $userRes['username'];
 			} 
 		}
 
