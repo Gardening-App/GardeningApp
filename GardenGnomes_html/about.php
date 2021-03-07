@@ -79,11 +79,15 @@ session_start();
         <?php
         if (isset($_SESSION['userID']) && $_SESSION['userID'] == 1) {
         ?>
+      
           loggedIn = true;
+        
         <?php } ?>
-
+          if(loggedIn){
         $(document).ready(function() {
+          
           var calendar = $('#calendar').fullCalendar({
+           
             editable: true,
             header: {
               left: 'prev,next today',
@@ -93,12 +97,10 @@ session_start();
             events: 'load.php',
             selectable: true,
             selectHelper: true,
+     
             select: function(start, end, allDay) {
 
               // Kill functionality if not logged in
-              if (!loggedIn) {
-                return false;
-              }
 
               var title = prompt("Enter Event Title");
               if (title) {
@@ -186,16 +188,32 @@ session_start();
             },
 
 
-
+          
           });
-
+      
         });
-      </script>
-      <?php if (!isset($_SESSION['userID']) || $_SESSION['userID'] != 1) { ?>
-        <p>Please log in to take advantage of our calendar!</p>
-      <?php
+      } else{
+        $(document).ready(function() {
+          
+          var calendar = $('#calendar').fullCalendar({
+           
+            editable: false,
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,agendaWeek,agendaDay'
+            },
+            events: 'load.php',
+            selectable: false,
+            selectHelper: false,
+          
+          
+          });
+      
+        });
       }
-      ?>
+        
+      </script>
 
       <div id='calendar'></div>
       <br>
