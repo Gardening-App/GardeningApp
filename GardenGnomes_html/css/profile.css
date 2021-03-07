@@ -1,0 +1,259 @@
+body {
+	background-color: rgb(142, 199, 85);
+	overflow-x: hidden;
+}
+
+#contentWrapper {
+	height: 85%;
+	background-color: white;
+	width: 80%;
+	margin: auto;
+	padding-bottom: 20px;
+}
+
+
+#columnOne {
+	position: relative;
+	width: 30%;
+	display: inline-block;
+	left: 20%;
+}
+
+#columnTwo {
+	width: 30%;
+	display: inline-block;
+	position: relative;
+	float: right;
+	right: 20%;
+}
+
+#imageBorder div img {
+	width: inherit;
+	height: inherit;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	object-fit: cover;
+	overflow: hidden;
+	background-color: #2fe7ff;
+}
+
+#imageBorder div {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+#imageBorder {
+	position: relative;
+	top: 10px;
+	border-style: solid;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	border-color: rgb(106, 106, 106);
+
+}
+
+#nameLabel {
+	position: relative;
+	text-align: center;
+	font-size: 24px;
+	width: 250px;
+	top: 10px;
+	text-decoration: underline;
+	color: #804f16;
+}
+
+#profileName {
+	position: relative;
+	font-size: 30;
+	text-align: center;
+	color: #804f16;
+	top: 10px;
+	width: 250px;
+}
+
+#friendsContainer {
+	position: relative;
+	top: 20px;
+	border-style: solid;
+	border-width: 6px;
+	width: 250px;
+	height: 400px;
+	border-radius: 25px;
+	border-color: rgb(142, 199, 85);
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+#friendsContainer h2 {
+	position: relative;
+	padding-top: 6px;
+	margin: auto;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	background-color: rgb(142, 199, 85);
+	border-radius: 18px;
+	color: white;
+}
+
+#friendsContainer ul {
+	width: 100%;
+}
+
+#friendsContainer ul li {
+	position: relative;
+	border-bottom-style: solid;
+	border-bottom-color: green;
+	border-bottom-width: 2px;
+	padding-bottom: 7px;
+	width: 100%;
+
+
+}
+
+#friendsContainer ul li:hover {
+	background-color: rgba(128, 128, 128, 0.59);
+}
+
+#friendsContainer ul li img {
+	position: relative;
+	top: 3px;
+	left: 20px;
+	float: left;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	object-fit: cover;
+	overflow: hidden;
+	background-color: #2fe7ff;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+#friendsContainer ul li p {
+	position: relative;
+	display: inline;
+	top: 5px;
+	left: 30px;
+	font-size: 20px;
+	color: saddlebrown
+}
+
+#friendsContainer ul li:first-of-type {
+	border-top-style: solid;
+	border-top-color: green;
+	border-top-width: 2px;
+
+}
+
+
+
+#personalContainer {
+	position: relative;
+	top: 20px;
+	left: 30px;
+	border-style: solid;
+	border-width: 6px;
+	width: 440px;
+	height: 350px;
+	border-radius: 25px;
+	border-color: rgb(142, 199, 85);
+}
+
+#personalContainer h2 {
+	position: relative;
+	padding-top: 6px;
+	margin: auto;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	background-color: rgb(142, 199, 85);
+	border-radius: 18px;
+	color: white;
+}
+
+
+
+#accountContainer {
+	position: relative;
+	top: 40px;
+	left: 30px;
+	border-style: solid;
+	border-width: 6px;
+	width: 440px;
+	height: 360px;
+	border-radius: 25px;
+	border-color: rgb(142, 199, 85);
+}
+
+#accountContainer h2 {
+	position: relative;
+	padding-top: 6px;
+	margin: auto;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	background-color: rgb(142, 199, 85);
+	border-radius: 18px;
+	color: white;
+}
+
+#personalInfo div {
+	position: relative;
+	top: 10px;
+	left: 30px;
+	width: 100%;
+}
+
+#personalInfo div {
+	font-size: 17px;
+	color: rgb(114, 66, 66);
+	font-weight: bold;
+}
+
+#accountContainer div {
+	font-size: 17px;
+	color: rgb(114, 66, 66);
+	font-weight: bold;
+}
+
+#changePassword {
+	position: relative;
+	top: 20px;
+	width: 100%;
+}
+
+#changePassword div {
+	position: relative;
+	left: 30px;
+	width: 100%;
+
+}
+
+
+#changeUsername {
+	position: relative;
+	top: 30px;
+	left: 30px;
+	width: 100%;
+}
+
+#changeUsername input:last-child {
+	position: relative;
+	left: 100px;
+}
+
+#changePassword input:last-child {
+	position: relative;
+	left: 130px;
+}
+
+#changeUsername div {
+	position: relative;
+	width: 100%;
+}
