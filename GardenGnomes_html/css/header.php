@@ -16,7 +16,7 @@
   <div class="dropdown-content">
     <?php
     if (isset($_SESSION['loggedIn'])) {
-      echo "<a href='login.php'>Logout</a>";
+      echo "<a href='login.php'>Logout</a><a href='profile.php'>Profile</a>";
     } else {
     echo "<a href='login.php'>Login</a><a href='signup.php'>Sign up</a>";
     }
