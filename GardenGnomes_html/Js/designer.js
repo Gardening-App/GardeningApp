@@ -251,8 +251,8 @@ $(function() {
 	
 	$('#cropType').change(function(e) {
 		// Change selected ID and abbreviation
-		var selectedCropID = $('#cropType option:selected').attr('cropID');
-		var selectedCropAbbr = $('#cropType option:selected').attr('cropAbbr');
+		selectedCropID = $('#cropType option:selected').attr('cropID');
+		selectedCropAbbr = $('#cropType option:selected').attr('cropAbbr');
 		
 		// Change currently selected if selected
 		if (plot.selectedCrop.crop) {
