@@ -35,7 +35,7 @@
 
             $pdo->beginTransaction();
             $preppedSql = $pdo->prepare($sql);
-            $preppedSql->execute([1, $_POST[name], $_POST[width], $_POST[height]]);
+            $preppedSql->execute([$_POST[userID], $_POST[name], $_POST[width], $_POST[height]]);
             $pdo->commit();
 
             // Get most recent entry to get ID 
