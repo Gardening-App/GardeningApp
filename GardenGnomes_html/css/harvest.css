@@ -1,0 +1,75 @@
+#harvest {
+	border-color: rgb(142, 199, 85);
+	border-width: 8px;
+	border-style: solid;
+	border-radius: 12px;
+	/* height: 40%; */
+	width: 60%;
+	position: relative;
+	margin: 0 auto;
+	
+	top: 8rem;
+}
+
+#harvest p {
+	font-weight: bolder;
+	
+	font-size: 40px;
+	padding-top: 5px;
+	padding-left: 30px;
+	background-color: rgb(142, 199, 85);
+	height: 55px;
+	color: rgba(255, 255, 255, 0.79);
+}
+
+.submit {
+	/* width: 20%; */
+	padding:10px 10px ;
+	position: relative;
+	font-weight: bolder;
+	font-size: 20px;
+	border-radius: 12px;
+	/* top: 170px; */
+	margin: auto;
+	background-color: rgb(142, 199, 85);
+	color: rgba(255, 255, 255, 0.79);
+	display: block;
+	text-align: center;
+}
+
+#innerContent {
+	line-height: 2.5rem;;
+	display: flex;
+	flex-direction: row;
+}
+
+#harvestForm {
+	position:relative;
+	width: 70%;
+}
+
+#results {
+	border-left: 5px solid rgb(142, 199, 85);
+	padding-left: 1rem;
+	padding-top: 2rem;
+	width: 28%;
+	height:auto;
+}
+
+
+#harvest label {
+	font-size: 25px;
+	font-weight: bolder;
+	position: relative;
+	top: 2px;
+	color: rgb(142, 199, 85);
+}
+
+label .yesNo {
+	font-size: 50%;
+	font-weight: 300;
+}
+
+footer {
+	display: none;
+}

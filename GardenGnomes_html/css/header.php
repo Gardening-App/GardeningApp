@@ -27,6 +27,7 @@
         <li><a href="layout.php">Layout</a></li>
         <li><a href="shop.php">Shop</a></li>
          <li><a href="social.php">Social</a></li>
+	 <li><a href="harvest.php">Harvest</a></li>
         <li>
         </ul>
    

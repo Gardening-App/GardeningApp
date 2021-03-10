@@ -1,36 +1,11 @@
 <?php
+	require("dbConnect.php");
+	require("callQuery.php");
+	require("dbfunctions.php");
 
-
-if (!session_id()) {
-	session_start();
-}
-
-?> 
-<html>
-<head>
-    <link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
-  <title>About page</title>
-</head>
-
-<div class="page-container">
-<div class="content-wrapper">	
-<body>
-	<?php
-require("dbConnect.php");
-require("callQuery.php");
-require("dbfunctions.php");
-include("css/header.php"); 
-
-?> 
-	<?php
-	$wrongMessage = 'Username or password error';
-	$triedLogin = false;
-
+	if (!session_id()) {
+		session_start();
+	}
 
 	// Log out if sent logOut
 	if (isset($_POST['logOut'])) {
@@ -38,10 +13,16 @@ include("css/header.php");
 		$_SESSION['userID'] = 0;
 	}
 
+	$wrongMessage = 'Username or password error';
+	$triedLogin = false;
+
+
+		
+
 	// Check to see if user is trying to log in
 	if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
 		
-	
+
 		// Check to see if username exists
 		$query = "SELECT * FROM user
 				WHERE username = '" . $_POST['username'] . "'";
@@ -59,7 +40,27 @@ include("css/header.php");
 		}
 
 		$triedLogin = true;
-	} 	?> 
+	}
+
+?> 
+<html>
+<head>
+    <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
+  <title>About page</title>
+</head>
+
+<div class="page-container">
+<div class="content-wrapper">	
+<body>
+	<?php
+include("css/header.php"); 
+
+?> 
 
 	<div id="login">
 		<p> Login </p>

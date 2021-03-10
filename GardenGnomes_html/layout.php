@@ -41,9 +41,25 @@ include("css/header.php");
 			<form method = "post">
 				<label for="CropType">Crop Type:</label>
 				<select id="cropType">
-					<option value="Tomato">Tomato</option>
-					<option value="Potato">Potato</option>
-					<option value="Corn">Corn</option>
+				<?php
+	try {
+				
+		$query = "SELECT * FROM crop";
+		$errorMessage = "Error retrieving crops";
+		$cropResult = callQuery($pdo, $query, $errorMessage);
+
+
+		// Query through layouts associated with current user
+		while ($row = $cropResult->fetch()) {
+			echo "<option value = '$row[name]' cropID = '$row[cropID]' cropAbbr='$row[abbr]'>$row[name]</option>";	
+			
+		}
+
+	} catch(exception $e) {
+		echo "<option value = '' sqlID = ''>Error connecting</option>";
+	}
+
+?> 
 				</select><br><br>
 				<input type = "button" id = "new" value = "New"><br><br>
 				<input type="text" id="cropName">
@@ -54,34 +70,37 @@ include("css/header.php");
 		if (isset($_SESSION['loggedIn'])) {
 
 			try {
-				
+
+				// Query through layouts associated with current user
 				$userID = $_SESSION['userID'];
 				$query = "SELECT * FROM layout
 					WHERE userId = $userID";
 				$errorMessage = "Error retrieving layouts";
 				$layoutResult = callQuery($pdo, $query, $errorMessage);
 
-
-				// Query through layouts associated with current user
 				while ($row = $layoutResult->fetch()) {
 
 					//Sub query to get all shapes for that layout
 					$query = "SELECT * FROM shape
+							LEFT JOIN crop ON shape.cropID = crop.cropID
 							WHERE layoutID = " . $row['layoutID'];
 					$errorMessage = "Error retrieving shapes";
 					$shapesResult = callQuery($pdo, $query, $errorMessage);
 
 					$coords = "";
-					$types = "";
+					$cropIDs = "";
+					$cropAbbrs = "";
 
-					// Build shapes string to put in option tag
+					// Build strings to put in option tag
 					while ($shapeRow = $shapesResult->fetch()) {
 						$coords .= $shapeRow['x1'] . '#' . $shapeRow['y1'] . '#' . $shapeRow['x2'] . '#' . $shapeRow['y2'] . '#';
-						$types .= $shapeRow['cropType'];
+						$cropIDs .= $shapeRow['cropID'] . '#';
+						$cropAbbrs .= $shapeRow['abbr'] . '#';
 					}
-					$shapesString = $coords . $types;
 
-					echo "<option value = '$shapesString' sqlID = '$row[layoutID]'>$row[layoutName]</option>";
+					// Build option
+					echo "<option value = '$coords' sqlID = '$row[layoutID]' cropIDs = '$cropIDs' cropAbbrs = '$cropAbbrs'
+					width='$row[layoutWidth]' height='$row[layoutHeight]'>$row[layoutName]</option>";
 				}
 
 			} catch(exception $e) {
@@ -115,7 +134,10 @@ include("css/header.php");
 		
 	<!-- Get post data -->
 	<script type="text/javascript">
-    	var userID="<?php echo $_SESSION['userID'];?>";
+		var userID;
+<?php if (isset($_SESSION['userID'])) {?>
+		userID="<?php echo $_SESSION['userID'];?>";
+<?php }?> 
     </script>
 	<script src = "Js/jquery-3.5.1.min.js"></script>
 	<script src = 'Js/designer.js'></script>

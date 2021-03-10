@@ -27,26 +27,34 @@
     if ($_POST['operation'] == 'write') {
 
         $layoutID = $_POST['oldID'];
+
         // Create entry for layout if it's new
         if ($_POST['oldID'] == '-1') {
 
-            $sql = "INSERT INTO layout (userID, layoutName) VALUES (?, ?)";
+            $sql = "INSERT INTO layout (userID, layoutName, layoutWidth, layoutHeight) VALUES (?, ?, ?, ?)";
 
             $pdo->beginTransaction();
             $preppedSql = $pdo->prepare($sql);
-            $preppedSql->execute([1, $_POST[name]]);
+            $preppedSql->execute([$_POST[userID], $_POST[name], $_POST[width], $_POST[height]]);
             $pdo->commit();
 
-            
-
-            // Get most recent entry to get ID (Find way to improve)
+            // Get most recent entry to get ID 
             $layoutID = getLastID($pdo);
-        } else {
-            // Clear shapes before saving new ones to id
-            // $layoutID = $_POST['oldID'];
-            //$layoutID = 136;
-            //deleteFromShapes($pdo, $layoutID);
 
+        } else {
+            // Set width in height incase changed
+           // UPDATE layout SET layoutWidth = 44, layoutHeight = 44 WHERE (`layoutID` = '6');
+            $sql = "UPDATE layout SET layoutWidth = $_POST[width], layoutHeight = $_POST[height] WHERE
+            (layoutID = $layoutID);";
+
+            $pdo->beginTransaction();
+            $preppedSql = $pdo->prepare($sql);
+            $preppedSql->execute();
+            $pdo->commit();
+
+
+
+            // Clear shapes before saving new ones to id
             $sql = "DELETE FROM shape
             WHERE layoutID = $layoutID";
             $errorMessage = "Error removing shapes";
@@ -56,7 +64,7 @@
 
         // Create entries for each crop in layout
         foreach($_POST[crops] as $crop) {
-            $sql = "INSERT INTO shape (x1, y1, x2, y2, layoutID, cropType)
+            $sql = "INSERT INTO shape (x1, y1, x2, y2, layoutID, cropID)
                     VALUES (?, ?, ?, ?, ?, ?)";
             $pdo->beginTransaction();
             $preppedSql = $pdo->prepare($sql);
@@ -87,5 +95,15 @@
         callQuery($pdo, $sql, $errorMessage);
 
         //deleteFromShapes($pdo, $layoutID);
+    }
+
+    //{operation: "saveHarvest", userID: userID,cropID: cropID, sqFeet: sqFeet, poundsProduced: poundsProduced}
+    if ($_POST['operation'] == 'saveHarvest') {
+        $sql = "INSERT INTO harvest (userID, cropID, sqFeet, poundsProduced)
+                    VALUES (?, ?, ?, ?);";
+        $pdo->beginTransaction();
+        $preppedSql = $pdo->prepare($sql);
+        $preppedSql->execute([$_POST['userID'], $_POST['cropID'], $_POST['sqFeet'], $_POST['poundsProduced']]);
+        $pdo->commit(); 
     }
 ?>
