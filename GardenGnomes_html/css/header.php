@@ -1,3 +1,7 @@
+<?php
+if (!session_id()) {
+	session_start();
+}
 <div class="navWrapper">
 <div class="social-links">
     <ul class="d-flex">
