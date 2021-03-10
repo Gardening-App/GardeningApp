@@ -6,7 +6,7 @@
 		<a href="layout.php"">Layout</a>
 		<a href="shop.php"">Shop</a>
 		<a href="social.php"">Social</a>
-		<a href="footer.php"">Footer</a>
+		<a href="harvest.php"">Harvest</a>
 	</nav>
 </footer>
 </div>
