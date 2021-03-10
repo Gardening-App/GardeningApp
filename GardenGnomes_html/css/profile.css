@@ -101,7 +101,9 @@ body {
 }
 
 #friendsContainer ul {
+	position: relative;
 	width: 100%;
+	right: 20px;
 }
 
 #friendsContainer ul li {
