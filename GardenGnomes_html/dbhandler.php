@@ -1,4 +1,8 @@
 <?php
+    if (!session_id()) {
+        session_start();
+      }
+
 	require("dbConnect.php");
 	require("callQuery.php");
 
@@ -35,7 +39,7 @@
 
             $pdo->beginTransaction();
             $preppedSql = $pdo->prepare($sql);
-            $preppedSql->execute([$_POST[userID], $_POST[name], $_POST[width], $_POST[height]]);
+            $preppedSql->execute([$_SESSION[userID], $_POST[name], $_POST[width], $_POST[height]]);
             $pdo->commit();
 
             // Get most recent entry to get ID 
