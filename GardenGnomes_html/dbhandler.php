@@ -101,7 +101,6 @@
         //deleteFromShapes($pdo, $layoutID);
     }
 
-    //{operation: "saveHarvest", userID: userID,cropID: cropID, sqFeet: sqFeet, poundsProduced: poundsProduced}
     if ($_POST['operation'] == 'saveHarvest') {
         $sql = "INSERT INTO harvest (userID, cropID, sqFeet, poundsProduced)
                     VALUES (?, ?, ?, ?);";
@@ -109,5 +108,17 @@
         $preppedSql = $pdo->prepare($sql);
         $preppedSql->execute([$_POST['userID'], $_POST['cropID'], $_POST['sqFeet'], $_POST['poundsProduced']]);
         $pdo->commit(); 
+    }
+
+    if ($_POST['operation'] == 'deleteComment') {
+
+        $commentId = $_POST['commentId'];
+        
+        $sqlDelete = "DELETE FROM social 
+                      WHERE socialID = (?)";
+
+        $preppedSql = $pdo->prepare($sqlDelete);
+
+        $preppedSql->execute([$commentId]);
     }
 ?>
