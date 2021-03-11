@@ -71,6 +71,20 @@ function getComments($pdo) {
         <button type='delete' commentID = '$commentBoxId' class='commentDelete name='commentDelete'>Delete</button>
         </form>";
 
+        if (isset($_POST['commentDelete'])) {
+
+          $commentId = $_POST['commentId'];
+          
+          $sqlDelete = "DELETE FROM social 
+                        WHERE socialID = (?)";
+
+          $preppedSql = $pdo->prepare($sqlDelete);
+
+          $preppedSql->execute([$commentId]);
+
+          echo '<script type="Js/removeDiv.js">',
+          "removeDiv($commentBoxId);",
+          '</script>';
         }     
       }
     }  
