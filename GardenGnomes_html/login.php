@@ -1,11 +1,11 @@
-<?php
-	require("dbConnect.php");
-	require("callQuery.php");
-	require("dbfunctions.php");
-
+<?php	
 	if (!session_id()) {
 		session_start();
 	}
+
+	require("dbConnect.php");
+	require("callQuery.php");
+	require("dbfunctions.php");
 
 	// Log out if sent logOut
 	if (isset($_POST['logOut'])) {
