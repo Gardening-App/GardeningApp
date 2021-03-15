@@ -1,4 +1,9 @@
 <?php
+
+if (!session_id()) {
+		session_start();
+	}
+
 date_default_timezone_set('America/Chicago');
 require 'shopItems.php';
 require 'sanitize.php';

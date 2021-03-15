@@ -51,6 +51,8 @@ if ( window.history.replaceState ) {
   window.history.pushState( null, null, window.location.href );
 }
 </script>
+<script src="Js/jquery-3.5.1.min.js"></script>
+<script src="Js/removeDiv.js"></script>
   <?php include("css/footer.php"); ?>
 </body>
 </div> <!-- end div .page-container -->

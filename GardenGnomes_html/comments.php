@@ -68,7 +68,7 @@ function getComments($pdo) {
 
         echo "<form id='delete".$row['socialID']."' method='POST' action=''>
         <input type='hidden' name='commentId' value='".$row['socialID']."'>
-        <button type='delete' class='commentDelete id='delete' name='commentDelete'>Delete</button>
+        <button type='delete' commentID = '$commentBoxId' class='commentDelete name='commentDelete'>Delete</button>
         </form>";
 
         if (isset($_POST['commentDelete'])) {

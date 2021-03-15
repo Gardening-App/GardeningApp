@@ -1,6 +1,13 @@
 <?php
-session_start();
+	if (!session_id()) {
+		session_start();
+	  }
+	require("dbConnect.php");
+	require("callQuery.php");
+	require("dbfunctions.php");
+	require("profilePicture.php");
 
+	
 ?>
 
 <html>
@@ -8,47 +15,56 @@ session_start();
 <head>
 
 
-  
-
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/profile.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
 
 
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/profile.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Slab&family=Yellowtail&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
 
 
-  <title>About page</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+	<script src="Js/profilePicture.js"></script>
+
+
+	<title>About page</title>
 </head>
 
 
 <div class="page-container">
-  <div class="content-wrapper">
+	<div class="content-wrapper">
 
-    <body>
+		<body>
 
-      <?php
-      include("css/header.php");
-      ?>
+			<?php
+			include("css/header.php");
+			?>
 
-<div id="contentWrapper">
+			<div id="contentWrapper">
 				<div id="columnOne">
+					<form id="uploadPicture" action="upload.php" method="post" enctype="multipart/form-data">
+						Select image to upload:
+						<input id="chooseFile" type="file" name="fileToUpload" id="fileToUpload">
+						<input id="upload" type="submit" value="Upload Image" name="submit">
+					</form>
+					<input id="changePicture" type="submit" value="Change Picture">
 					<div id="imageBorder">
 						<div>
-							<img src="images/gnome.webp">
+							<?php setProfilePicture($pdo) ?>
+							<!-- <img src="images/gnome.webp"> -->
 						</div>
 					</div>
-					<p id="nameLabel">Name</p>
+					<?php setName($pdo) ?>
+					<!-- <p id="nameLabel">Name</p> -->
 					<p id="profileName" contenteditable="true">Mr. Gnome</p>
 
 					<div id="friendsContainer">
@@ -66,8 +82,8 @@ session_start();
 						</ul>
 					</div>
 				</div>
-				
-				
+
+
 				<div id="columnTwo">
 
 					<div id="personalContainer">
@@ -100,7 +116,7 @@ session_start();
 					</div>
 
 
-					
+
 					<div id="accountContainer">
 						<h2>Account Info</h2>
 						<div id="changePassword">
@@ -129,13 +145,13 @@ session_start();
 					</div>
 				</div>
 			</div>
-			
 
-  <?php
 
-  include("css/footer.php");
-  ?>
-</div>
-</body>
+			<?php
+
+			include("css/footer.php");
+			?>
+	</div>
+	</body>
 
 </html>
