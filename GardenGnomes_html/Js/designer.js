@@ -60,12 +60,55 @@ $(function() {
 			if (this.tempCrop) {
 				this.ctx.strokeStyle = 'red';
 				this.drawRect(this.tempCrop);
+				this.drawSize(this.tempCrop);
 			}
 			
 			// Check for selected crop
 			if (this.selectedCrop.index != -1) {
 				this.ctx.strokeStyle = 'orange';
 				this.drawRect(this.selectedCrop.crop);
+				this.drawSize(this.selectedCrop.crop);
+			}
+		}
+
+		drawSize(rect) {
+			ctx.font = "15px Arial";
+			ctx.fillStyle = "black";
+			ctx.textAlign = "left";
+			var wide = this.getLength(rect.y1, rect.y2);
+			var tall = this.getLength(rect.x1, rect.x2);
+
+			//Check edges and draw accordingly
+
+			// Width
+			var closeLeft = rect.x1 < 30;
+			var closeRight = rect.x2 + 30 > this.canvas.width;
+			if (closeLeft) {
+				ctx.textAlign = "left";
+
+				if (closeRight) {		
+					this.ctx.fillText(wide, rect.x1, (rect.y1 + rect.y2) / 2);
+				} else {
+					this.ctx.fillText(wide, rect.x2, (rect.y1 + rect.y2) / 2);
+				}	
+			} else {
+				ctx.textAlign = "right";
+				this.ctx.fillText(wide, rect.x1, (rect.y1 + rect.y2) / 2);
+			}
+				
+			// Height
+			var closeTop = rect.y1 < 30;
+			var closeBottom = rect.y2 + 30 > this.canvas.height;
+			this.ctx.textAlign = "center";
+			if (closeTop) {
+
+				if (closeBottom) {		
+					this.ctx.fillText(tall, (rect.x1 + rect.x2) / 2, rect.y1 + 15);
+				} else {
+					this.ctx.fillText(tall, (rect.x1 + rect.x2) / 2, rect.y2 + 15);
+				}	
+			} else {
+				this.ctx.fillText(tall, (rect.x1 + rect.x2) / 2, rect.y1 - 15);
 			}
 		}
 	
@@ -87,6 +130,10 @@ $(function() {
 			this.ctx.font = Math.floor(radius) + "px Arial";
 			this.ctx.textAlign = "center";
 			this.ctx.strokeText(rect.cropAbbr, centerX, centerY + radius / 3);
+		}
+
+		getLength(c1,c2) {
+			return ((c2 - c1) / 10).toFixed(1) + "'";
 		}
 	}
 	
