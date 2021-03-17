@@ -28,7 +28,7 @@ include("css/header.php");
 		<h1>Garden layout designer</h1>
 	</div>
 	<div id = 'designerWrapper'>
-			
+		
 		<div id = 'designerLeft'>
 			<span id = 'dimX'>60'</span>
 			<canvas id = 'designerWindow' width = '600' height = '400'></canvas>
