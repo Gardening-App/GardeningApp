@@ -135,9 +135,33 @@ require("profilePicture.php");
 						if (isset($_POST['delete'])) {
 							$deleteSuccess = false;
 							if ($_POST['delete'] == "Delete") {
+								$query = "SELECT * FROM layout WHERE userID = '$userID'";
+								$layoutResults = callQuery($pdo, $query, $errorMessage);
+
+								foreach($layoutResults as $layout) {
+									$layoutId = $layout['layoutID'];
+									$query = "DELETE FROM shape WHERE layoutID = $layoutId;";
+									callQuery($pdo, $query, $errorMessage);
+									
+								}
+
+								$query = "DELETE FROM layout WHERE userID = $userID;";
+								callQuery($pdo, $query, $errorMessage);
+								$query = "DELETE FROM harvest WHERE userID = $userID;";
+								callQuery($pdo, $query, $errorMessage);
+								$query = "DELETE FROM social WHERE user_userID = $userID;";
+								callQuery($pdo, $query, $errorMessage);
+								$query = "DELETE FROM profile WHERE userID = $userID;";
+								callQuery($pdo, $query, $errorMessage);
 								$query = "DELETE FROM user WHERE userID = '$userID';";
 								$profileResult = callQuery($pdo, $query, $errorMessage);
 								$deleteSuccess = true;
+
+								unset($_SESSION['loggedIn']);
+								$_SESSION['userID'] = 0;
+?> 
+				<script>window.location.replace("about.php");</script>
+<?php
 							}
 						}
 					} else {
